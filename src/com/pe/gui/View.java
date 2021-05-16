@@ -6,9 +6,12 @@
 package com.pe.gui;
 
 import java.awt.Color;
+import java.awt.Font;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import javax.swing.JButton;
+import javax.swing.JPanel;
+import javax.swing.event.MouseInputListener;
 import javax.swing.plaf.basic.BasicButtonUI;
 import javax.swing.plaf.basic.BasicScrollBarUI;
 import javax.swing.plaf.basic.BasicScrollPaneUI;
@@ -25,10 +28,35 @@ public class View extends javax.swing.JFrame {
     /**
      * Creates new form View
      */
+    private void darkMode(){
+        sidePanel.setBackground(new Color(18,18,18));
+        jRadioButton2.setBackground(new Color(31, 27, 36));
+        jRadioButton3.setBackground(new Color(31, 27, 36));
+        JPanel  panels []={jPanel1,jPanel101,jPanel102,jPanel103, jPanel104, jPanel105,
+        jPanel106, jPanel107, jPanel108, jPanel109, jPanel110, jPanel111, jPanel112, jPanel113,
+        jPanel2, jPanel24, jPanel25, jPanel26, jPanel27, jPanel28, jPanel3, jPanel37, jPanel38, jPanel39,
+        jPanel4, jPanel40, jPanel41,jPanel42, jPanel43, jPanel44, jPanel45,jPanel46, jPanel47,
+        jPanel48, jPanel49, jPanel54, jPanel55, jPanel56, jPanel57, jPanel58, jPanel59, jPanel65,
+        jPanel65, jPanel66, jPanel67, jPanel68, jPanel69, jPanel70, jPanel71, jPanel72, jPanel73,
+        jPanel74, jPanel75, jPanel76, jPanel77, jPanel78, jPanel79, jPanel80, jPanel81, jPanel82,
+        jPanel81, jPanel82, jPanel83, jPanel84, jPanel85, jPanel86, jPanel87, jPanel88, jPanel89, jPanel90,
+        jPanel91, jPanel92, jPanel93, jPanel94, jPanel95, jPanel96};
+        
+        for (JPanel panel: panels){
+            panel.setBackground(new Color (31,27,36));
+        }
+        JButton botones [] = {jButton2, jButton3, jButton4, jButton5, jButton7,jButton8,jButton9,jButton1, 
+            jButton6, jButton10, jButton11};
+        for (JButton boton : botones){
+            boton.setBackground(new Color (18,18,18));
+        }
+    }
     public View() {
         initComponents();
         jTable2.getTableHeader().setBackground(new Color (0,153,204));
+        jTable2.getTableHeader().setForeground(new Color (255,255,254));
         jTable2.getTableHeader().setOpaque(false);
+        jTable2.getTableHeader().setFont(new Font ("Orbitron",Font.PLAIN, 14));
         jButton8.setUI(new BasicButtonUI());
         
         jScrollPane2.getVerticalScrollBar().setUI(new BasicScrollBarUI() {
@@ -41,7 +69,12 @@ public class View extends javax.swing.JFrame {
         jScrollPane2.getVerticalScrollBar().setBackground(new Color (28,34,59));
         
         
-        JButton [] btns = {jButton2, jButton3, jButton1, jButton4, jButton5, jButton6, jButton7};
+        
+        
+        JButton [] btns = {jButton2, jButton3, jButton4, jButton5, jButton7,jButton8,jButton9};
+        JButton [] btnsside= {jButton1, jButton6, jButton10, jButton11 };
+        
+        
         for (JButton btn : btns){
             btn.setBackground(new Color (48,61,151));
             btn.setUI(new BasicButtonUI());
@@ -66,10 +99,69 @@ public class View extends javax.swing.JFrame {
 
                 @Override
                 public void mouseExited(MouseEvent e) {
-                    btn.setBackground(new Color (48,61,151));
+                    
+                    btn.setBackground(sidePanel.getBackground());
                 }
             });
         }
+        for (JButton btn: btnsside){
+            btn.setBackground(new Color (48,61,151));
+            btn.setUI(new BasicButtonUI());
+            btn.addMouseListener(new MouseListener() {
+                @Override
+                public void mouseClicked(MouseEvent e) {
+                    
+                }
+
+                @Override
+                public void mousePressed(MouseEvent e) {
+                    
+                }
+
+                @Override
+                public void mouseReleased(MouseEvent e) {
+                }
+
+                @Override
+                public void mouseEntered(MouseEvent e) {
+                    btn.setBackground(new Color (50,30,150));
+                }
+
+                @Override
+                public void mouseExited(MouseEvent e) {
+                    btn.setBackground(sidePanel.getBackground());
+                }
+
+                
+            });
+        }
+        jButton6.addMouseListener(new MouseListener() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                darkMode();
+                jTable2.getTableHeader().setBackground(new Color (18,18,18));
+                jTable2.getTableHeader().setForeground(new Color (255,255,254));
+            }
+
+            @Override
+            public void mousePressed(MouseEvent e) {
+            }
+
+            @Override
+            public void mouseReleased(MouseEvent e) {
+            }
+
+            @Override
+            public void mouseEntered(MouseEvent e) {
+            }
+
+            @Override
+            public void mouseExited(MouseEvent e) {
+            }
+
+            
+        });
+        
     }
 
     /**
@@ -87,12 +179,10 @@ public class View extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
         jButton6 = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
-        jButton7 = new javax.swing.JButton();
+        jButton10 = new javax.swing.JButton();
+        jButton11 = new javax.swing.JButton();
         centerPanel = new javax.swing.JPanel();
         centerUpPanel = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
@@ -146,24 +236,28 @@ public class View extends javax.swing.JFrame {
         jPanel28 = new javax.swing.JPanel();
         jRadioButton2 = new javax.swing.JRadioButton();
         jRadioButton3 = new javax.swing.JRadioButton();
+        jPanel4 = new javax.swing.JPanel();
+        jButton3 = new javax.swing.JButton();
+        jButton4 = new javax.swing.JButton();
+        jButton5 = new javax.swing.JButton();
+        jButton7 = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         jLabel10 = new javax.swing.JLabel();
         jPanel89 = new javax.swing.JPanel();
         jPanel90 = new javax.swing.JPanel();
-        jLabel25 = new javax.swing.JLabel();
-        jPanel91 = new javax.swing.JPanel();
-        jPanel92 = new javax.swing.JPanel();
-        jTextField14 = new javax.swing.JTextField();
-        jPanel93 = new javax.swing.JPanel();
-        jPanel94 = new javax.swing.JPanel();
-        jPanel95 = new javax.swing.JPanel();
-        jPanel96 = new javax.swing.JPanel();
-        jLabel26 = new javax.swing.JLabel();
-        jPanel97 = new javax.swing.JPanel();
-        jPanel98 = new javax.swing.JPanel();
-        jTextField15 = new javax.swing.JTextField();
-        jPanel99 = new javax.swing.JPanel();
-        jPanel100 = new javax.swing.JPanel();
+        jPanel101 = new javax.swing.JPanel();
+        jLabel27 = new javax.swing.JLabel();
+        jPanel102 = new javax.swing.JPanel();
+        jTextField16 = new javax.swing.JTextField();
+        jPanel103 = new javax.swing.JPanel();
+        jPanel104 = new javax.swing.JPanel();
+        jPanel105 = new javax.swing.JPanel();
+        jPanel106 = new javax.swing.JPanel();
+        jLabel28 = new javax.swing.JLabel();
+        jPanel107 = new javax.swing.JPanel();
+        jTextField17 = new javax.swing.JTextField();
+        jPanel108 = new javax.swing.JPanel();
+        jPanel109 = new javax.swing.JPanel();
         jPanel37 = new javax.swing.JPanel();
         jPanel38 = new javax.swing.JPanel();
         jLabel13 = new javax.swing.JLabel();
@@ -182,10 +276,21 @@ public class View extends javax.swing.JFrame {
         jPanel47 = new javax.swing.JPanel();
         jPanel48 = new javax.swing.JPanel();
         jLabel18 = new javax.swing.JLabel();
+        jPanel110 = new javax.swing.JPanel();
+        jPanel111 = new javax.swing.JPanel();
+        jLabel29 = new javax.swing.JLabel();
+        jPanel112 = new javax.swing.JPanel();
+        jPanel113 = new javax.swing.JPanel();
+        jLabel30 = new javax.swing.JLabel();
+        jPanel91 = new javax.swing.JPanel();
+        jPanel92 = new javax.swing.JPanel();
+        jPanel93 = new javax.swing.JPanel();
+        jPanel94 = new javax.swing.JPanel();
+        jPanel95 = new javax.swing.JPanel();
+        jPanel96 = new javax.swing.JPanel();
         jPanel49 = new javax.swing.JPanel();
-        jPanel50 = new javax.swing.JPanel();
         jButton8 = new javax.swing.JButton();
-        jPanel51 = new javax.swing.JPanel();
+        jButton9 = new javax.swing.JButton();
         centerDownPanel = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
         jTable2 = new javax.swing.JTable();
@@ -218,23 +323,17 @@ public class View extends javax.swing.JFrame {
         jButton2.setContentAreaFilled(false);
         sidePanel.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 30, 90, 100));
 
-        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/pe/icons/lupa1.png"))); // NOI18N
-        sidePanel.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 240, 90, 100));
+        jButton6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/pe/icons/black-lightbulb1.png"))); // NOI18N
+        sidePanel.add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 730, 90, 100));
 
-        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/pe/icons/add1.png"))); // NOI18N
-        sidePanel.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 350, 90, 100));
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/pe/icons/llaves1.png"))); // NOI18N
+        sidePanel.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 280, 90, 100));
 
-        jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/pe/icons/trashcan1.png"))); // NOI18N
-        sidePanel.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 460, 90, 100));
+        jButton10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/pe/icons/calendar21.png"))); // NOI18N
+        sidePanel.add(jButton10, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 430, 90, 100));
 
-        jButton6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/pe/icons/impresora1.png"))); // NOI18N
-        sidePanel.add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 570, 90, 100));
-
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/pe/icons/calendar21.png"))); // NOI18N
-        sidePanel.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 790, 90, 100));
-
-        jButton7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/pe/icons/calendar21.png"))); // NOI18N
-        sidePanel.add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 680, 90, 100));
+        jButton11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/pe/icons/impresora1.png"))); // NOI18N
+        sidePanel.add(jButton11, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 580, 90, 100));
 
         rooPanel.add(sidePanel, java.awt.BorderLayout.WEST);
 
@@ -247,7 +346,7 @@ public class View extends javax.swing.JFrame {
         centerUpPanel.setLayout(new java.awt.GridLayout(1, 2, 10, 0));
 
         jPanel2.setBackground(new java.awt.Color(58, 120, 220));
-        jPanel2.setLayout(new java.awt.GridLayout(8, 0, 0, 40));
+        jPanel2.setLayout(new java.awt.GridLayout(8, 0, 0, 20));
 
         jPanel3.setBackground(new java.awt.Color(58, 120, 220));
         jPanel3.setLayout(new java.awt.BorderLayout());
@@ -286,9 +385,9 @@ public class View extends javax.swing.JFrame {
         jPanel57.setPreferredSize(new java.awt.Dimension(20, 58));
         jPanel57.setLayout(new java.awt.BorderLayout());
 
-        jTextField8.setBackground(new java.awt.Color(58, 120, 220));
+        jTextField8.setBackground(new java.awt.Color(255, 255, 255));
         jTextField8.setFont(new java.awt.Font("Orbitron", 1, 24)); // NOI18N
-        jTextField8.setForeground(new java.awt.Color(255, 255, 255));
+        jTextField8.setForeground(new java.awt.Color(51, 51, 51));
         jTextField8.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 255, 255)));
         jTextField8.setPreferredSize(new java.awt.Dimension(2, 30));
         jPanel57.add(jTextField8, java.awt.BorderLayout.SOUTH);
@@ -300,7 +399,7 @@ public class View extends javax.swing.JFrame {
         jPanel58.setLayout(jPanel58Layout);
         jPanel58Layout.setHorizontalGroup(
             jPanel58Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 315, Short.MAX_VALUE)
+            .addGap(0, 317, Short.MAX_VALUE)
         );
         jPanel58Layout.setVerticalGroup(
             jPanel58Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -322,7 +421,7 @@ public class View extends javax.swing.JFrame {
         );
         jPanel59Layout.setVerticalGroup(
             jPanel59Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 40, Short.MAX_VALUE)
+            .addGap(0, 57, Short.MAX_VALUE)
         );
 
         jPanel56.add(jPanel59, java.awt.BorderLayout.EAST);
@@ -339,7 +438,7 @@ public class View extends javax.swing.JFrame {
 
         jLabel21.setFont(new java.awt.Font("Orbitron", 1, 24)); // NOI18N
         jLabel21.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel21.setText("   Nombre  ");
+        jLabel21.setText("   Dirección");
         jLabel21.setToolTipText("");
         jLabel21.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
         jLabel21.setPreferredSize(new java.awt.Dimension(200, 20));
@@ -354,11 +453,16 @@ public class View extends javax.swing.JFrame {
         jPanel68.setPreferredSize(new java.awt.Dimension(20, 58));
         jPanel68.setLayout(new java.awt.BorderLayout());
 
-        jTextField10.setBackground(new java.awt.Color(58, 120, 220));
+        jTextField10.setBackground(new java.awt.Color(255, 255, 255));
         jTextField10.setFont(new java.awt.Font("Orbitron", 1, 24)); // NOI18N
-        jTextField10.setForeground(new java.awt.Color(255, 255, 255));
+        jTextField10.setForeground(new java.awt.Color(51, 51, 51));
         jTextField10.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 255, 255)));
         jTextField10.setPreferredSize(new java.awt.Dimension(2, 30));
+        jTextField10.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField10ActionPerformed(evt);
+            }
+        });
         jPanel68.add(jTextField10, java.awt.BorderLayout.SOUTH);
 
         jPanel69.setBackground(new java.awt.Color(58, 120, 220));
@@ -368,7 +472,7 @@ public class View extends javax.swing.JFrame {
         jPanel69.setLayout(jPanel69Layout);
         jPanel69Layout.setHorizontalGroup(
             jPanel69Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 315, Short.MAX_VALUE)
+            .addGap(0, 317, Short.MAX_VALUE)
         );
         jPanel69Layout.setVerticalGroup(
             jPanel69Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -390,7 +494,7 @@ public class View extends javax.swing.JFrame {
         );
         jPanel70Layout.setVerticalGroup(
             jPanel70Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 40, Short.MAX_VALUE)
+            .addGap(0, 57, Short.MAX_VALUE)
         );
 
         jPanel67.add(jPanel70, java.awt.BorderLayout.EAST);
@@ -407,7 +511,7 @@ public class View extends javax.swing.JFrame {
 
         jLabel22.setFont(new java.awt.Font("Orbitron", 1, 24)); // NOI18N
         jLabel22.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel22.setText("   Nombre  ");
+        jLabel22.setText("   Correo  ");
         jLabel22.setToolTipText("");
         jLabel22.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
         jLabel22.setPreferredSize(new java.awt.Dimension(200, 20));
@@ -422,9 +526,9 @@ public class View extends javax.swing.JFrame {
         jPanel74.setPreferredSize(new java.awt.Dimension(20, 58));
         jPanel74.setLayout(new java.awt.BorderLayout());
 
-        jTextField11.setBackground(new java.awt.Color(58, 120, 220));
+        jTextField11.setBackground(new java.awt.Color(255, 255, 255));
         jTextField11.setFont(new java.awt.Font("Orbitron", 1, 24)); // NOI18N
-        jTextField11.setForeground(new java.awt.Color(255, 255, 255));
+        jTextField11.setForeground(new java.awt.Color(51, 51, 51));
         jTextField11.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 255, 255)));
         jTextField11.setPreferredSize(new java.awt.Dimension(2, 30));
         jPanel74.add(jTextField11, java.awt.BorderLayout.SOUTH);
@@ -436,7 +540,7 @@ public class View extends javax.swing.JFrame {
         jPanel75.setLayout(jPanel75Layout);
         jPanel75Layout.setHorizontalGroup(
             jPanel75Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 315, Short.MAX_VALUE)
+            .addGap(0, 317, Short.MAX_VALUE)
         );
         jPanel75Layout.setVerticalGroup(
             jPanel75Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -458,7 +562,7 @@ public class View extends javax.swing.JFrame {
         );
         jPanel76Layout.setVerticalGroup(
             jPanel76Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 40, Short.MAX_VALUE)
+            .addGap(0, 57, Short.MAX_VALUE)
         );
 
         jPanel73.add(jPanel76, java.awt.BorderLayout.EAST);
@@ -475,7 +579,7 @@ public class View extends javax.swing.JFrame {
 
         jLabel23.setFont(new java.awt.Font("Orbitron", 1, 24)); // NOI18N
         jLabel23.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel23.setText("   Nombre  ");
+        jLabel23.setText("   Celular  ");
         jLabel23.setToolTipText("");
         jLabel23.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
         jLabel23.setPreferredSize(new java.awt.Dimension(200, 20));
@@ -490,9 +594,9 @@ public class View extends javax.swing.JFrame {
         jPanel80.setPreferredSize(new java.awt.Dimension(20, 58));
         jPanel80.setLayout(new java.awt.BorderLayout());
 
-        jTextField12.setBackground(new java.awt.Color(58, 120, 220));
+        jTextField12.setBackground(new java.awt.Color(255, 255, 255));
         jTextField12.setFont(new java.awt.Font("Orbitron", 1, 24)); // NOI18N
-        jTextField12.setForeground(new java.awt.Color(255, 255, 255));
+        jTextField12.setForeground(new java.awt.Color(51, 51, 51));
         jTextField12.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 255, 255)));
         jTextField12.setPreferredSize(new java.awt.Dimension(2, 30));
         jPanel80.add(jTextField12, java.awt.BorderLayout.SOUTH);
@@ -504,7 +608,7 @@ public class View extends javax.swing.JFrame {
         jPanel81.setLayout(jPanel81Layout);
         jPanel81Layout.setHorizontalGroup(
             jPanel81Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 315, Short.MAX_VALUE)
+            .addGap(0, 317, Short.MAX_VALUE)
         );
         jPanel81Layout.setVerticalGroup(
             jPanel81Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -526,7 +630,7 @@ public class View extends javax.swing.JFrame {
         );
         jPanel82Layout.setVerticalGroup(
             jPanel82Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 40, Short.MAX_VALUE)
+            .addGap(0, 57, Short.MAX_VALUE)
         );
 
         jPanel79.add(jPanel82, java.awt.BorderLayout.EAST);
@@ -543,7 +647,7 @@ public class View extends javax.swing.JFrame {
 
         jLabel24.setFont(new java.awt.Font("Orbitron", 1, 24)); // NOI18N
         jLabel24.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel24.setText("   Nombre  ");
+        jLabel24.setText("   RUC  ");
         jLabel24.setToolTipText("");
         jLabel24.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
         jLabel24.setPreferredSize(new java.awt.Dimension(200, 20));
@@ -558,9 +662,9 @@ public class View extends javax.swing.JFrame {
         jPanel86.setPreferredSize(new java.awt.Dimension(20, 58));
         jPanel86.setLayout(new java.awt.BorderLayout());
 
-        jTextField13.setBackground(new java.awt.Color(58, 120, 220));
+        jTextField13.setBackground(new java.awt.Color(255, 255, 255));
         jTextField13.setFont(new java.awt.Font("Orbitron", 1, 24)); // NOI18N
-        jTextField13.setForeground(new java.awt.Color(255, 255, 255));
+        jTextField13.setForeground(new java.awt.Color(51, 51, 51));
         jTextField13.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 255, 255)));
         jTextField13.setPreferredSize(new java.awt.Dimension(2, 30));
         jPanel86.add(jTextField13, java.awt.BorderLayout.SOUTH);
@@ -572,7 +676,7 @@ public class View extends javax.swing.JFrame {
         jPanel87.setLayout(jPanel87Layout);
         jPanel87Layout.setHorizontalGroup(
             jPanel87Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 315, Short.MAX_VALUE)
+            .addGap(0, 317, Short.MAX_VALUE)
         );
         jPanel87Layout.setVerticalGroup(
             jPanel87Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -594,7 +698,7 @@ public class View extends javax.swing.JFrame {
         );
         jPanel88Layout.setVerticalGroup(
             jPanel88Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 40, Short.MAX_VALUE)
+            .addGap(0, 57, Short.MAX_VALUE)
         );
 
         jPanel85.add(jPanel88, java.awt.BorderLayout.EAST);
@@ -630,7 +734,7 @@ public class View extends javax.swing.JFrame {
         jPanel27.setLayout(jPanel27Layout);
         jPanel27Layout.setHorizontalGroup(
             jPanel27Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 325, Short.MAX_VALUE)
+            .addGap(0, 327, Short.MAX_VALUE)
         );
         jPanel27Layout.setVerticalGroup(
             jPanel27Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -663,10 +767,27 @@ public class View extends javax.swing.JFrame {
 
         jPanel2.add(jPanel24);
 
+        jPanel4.setBackground(new java.awt.Color(58, 120, 220));
+        jPanel4.setLayout(new java.awt.GridLayout(1, 4));
+
+        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/pe/icons/lupa2.png"))); // NOI18N
+        jPanel4.add(jButton3);
+
+        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/pe/icons/add2.png"))); // NOI18N
+        jPanel4.add(jButton4);
+
+        jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/pe/icons/actualizar2.png"))); // NOI18N
+        jPanel4.add(jButton5);
+
+        jButton7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/pe/icons/trashcan2.png"))); // NOI18N
+        jPanel4.add(jButton7);
+
+        jPanel2.add(jPanel4);
+
         centerUpPanel.add(jPanel2);
 
         jPanel1.setBackground(new java.awt.Color(58, 120, 220));
-        jPanel1.setLayout(new java.awt.GridLayout(8, 0, 0, 40));
+        jPanel1.setLayout(new java.awt.GridLayout(8, 0, 0, 20));
 
         jLabel10.setBackground(new java.awt.Color(58, 120, 220));
         jLabel10.setFont(new java.awt.Font("Orbitron", 0, 18)); // NOI18N
@@ -677,139 +798,138 @@ public class View extends javax.swing.JFrame {
         jLabel10.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
         jPanel1.add(jLabel10);
 
-        jPanel89.setLayout(new java.awt.BorderLayout());
+        jPanel89.setBackground(new java.awt.Color(58, 120, 220));
+        jPanel89.setLayout(new java.awt.GridLayout(1, 2));
 
         jPanel90.setBackground(new java.awt.Color(58, 120, 220));
-        jPanel90.setPreferredSize(new java.awt.Dimension(150, 58));
+        jPanel90.setPreferredSize(new java.awt.Dimension(250, 58));
         jPanel90.setLayout(new java.awt.BorderLayout());
 
-        jLabel25.setFont(new java.awt.Font("Orbitron", 1, 24)); // NOI18N
-        jLabel25.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel25.setText("   Nombre  ");
-        jLabel25.setToolTipText("");
-        jLabel25.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
-        jPanel90.add(jLabel25, java.awt.BorderLayout.CENTER);
+        jPanel101.setBackground(new java.awt.Color(58, 120, 220));
+        jPanel101.setPreferredSize(new java.awt.Dimension(120, 58));
+        jPanel101.setLayout(new java.awt.BorderLayout());
 
-        jPanel89.add(jPanel90, java.awt.BorderLayout.WEST);
+        jLabel27.setFont(new java.awt.Font("Orbitron", 1, 24)); // NOI18N
+        jLabel27.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel27.setText("   Horas  ");
+        jLabel27.setToolTipText("");
+        jLabel27.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
+        jPanel101.add(jLabel27, java.awt.BorderLayout.CENTER);
 
-        jPanel91.setBackground(new java.awt.Color(58, 120, 220));
-        jPanel91.setLayout(new java.awt.BorderLayout());
+        jPanel90.add(jPanel101, java.awt.BorderLayout.LINE_START);
 
-        jPanel92.setBackground(new java.awt.Color(58, 120, 220));
-        jPanel92.setPreferredSize(new java.awt.Dimension(20, 58));
-        jPanel92.setLayout(new java.awt.BorderLayout());
+        jPanel102.setBackground(new java.awt.Color(58, 120, 220));
+        jPanel102.setPreferredSize(new java.awt.Dimension(10, 58));
+        jPanel102.setLayout(new java.awt.BorderLayout());
 
-        jTextField14.setBackground(new java.awt.Color(58, 120, 220));
-        jTextField14.setFont(new java.awt.Font("Orbitron", 1, 24)); // NOI18N
-        jTextField14.setForeground(new java.awt.Color(255, 255, 255));
-        jTextField14.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 255, 255)));
-        jTextField14.setPreferredSize(new java.awt.Dimension(2, 30));
-        jPanel92.add(jTextField14, java.awt.BorderLayout.SOUTH);
+        jTextField16.setBackground(new java.awt.Color(255, 255, 255));
+        jTextField16.setFont(new java.awt.Font("Orbitron", 1, 24)); // NOI18N
+        jTextField16.setForeground(new java.awt.Color(51, 51, 51));
+        jTextField16.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 255, 255)));
+        jTextField16.setPreferredSize(new java.awt.Dimension(2, 30));
+        jPanel102.add(jTextField16, java.awt.BorderLayout.SOUTH);
 
-        jPanel93.setBackground(new java.awt.Color(58, 120, 220));
-        jPanel93.setPreferredSize(new java.awt.Dimension(20, 58));
+        jPanel103.setBackground(new java.awt.Color(58, 120, 220));
+        jPanel103.setPreferredSize(new java.awt.Dimension(20, 58));
 
-        javax.swing.GroupLayout jPanel93Layout = new javax.swing.GroupLayout(jPanel93);
-        jPanel93.setLayout(jPanel93Layout);
-        jPanel93Layout.setHorizontalGroup(
-            jPanel93Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 365, Short.MAX_VALUE)
+        javax.swing.GroupLayout jPanel103Layout = new javax.swing.GroupLayout(jPanel103);
+        jPanel103.setLayout(jPanel103Layout);
+        jPanel103Layout.setHorizontalGroup(
+            jPanel103Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 128, Short.MAX_VALUE)
         );
-        jPanel93Layout.setVerticalGroup(
-            jPanel93Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        jPanel103Layout.setVerticalGroup(
+            jPanel103Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 58, Short.MAX_VALUE)
         );
 
-        jPanel92.add(jPanel93, java.awt.BorderLayout.NORTH);
+        jPanel102.add(jPanel103, java.awt.BorderLayout.NORTH);
 
-        jPanel91.add(jPanel92, java.awt.BorderLayout.CENTER);
+        jPanel90.add(jPanel102, java.awt.BorderLayout.CENTER);
 
-        jPanel94.setBackground(new java.awt.Color(58, 120, 220));
-        jPanel94.setPreferredSize(new java.awt.Dimension(20, 58));
+        jPanel104.setBackground(new java.awt.Color(58, 120, 220));
+        jPanel104.setPreferredSize(new java.awt.Dimension(20, 58));
 
-        javax.swing.GroupLayout jPanel94Layout = new javax.swing.GroupLayout(jPanel94);
-        jPanel94.setLayout(jPanel94Layout);
-        jPanel94Layout.setHorizontalGroup(
-            jPanel94Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout jPanel104Layout = new javax.swing.GroupLayout(jPanel104);
+        jPanel104.setLayout(jPanel104Layout);
+        jPanel104Layout.setHorizontalGroup(
+            jPanel104Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 20, Short.MAX_VALUE)
         );
-        jPanel94Layout.setVerticalGroup(
-            jPanel94Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 40, Short.MAX_VALUE)
+        jPanel104Layout.setVerticalGroup(
+            jPanel104Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 57, Short.MAX_VALUE)
         );
 
-        jPanel91.add(jPanel94, java.awt.BorderLayout.EAST);
+        jPanel90.add(jPanel104, java.awt.BorderLayout.LINE_END);
 
-        jPanel89.add(jPanel91, java.awt.BorderLayout.CENTER);
+        jPanel89.add(jPanel90);
+
+        jPanel105.setBackground(new java.awt.Color(58, 120, 220));
+        jPanel105.setPreferredSize(new java.awt.Dimension(300, 58));
+        jPanel105.setLayout(new java.awt.BorderLayout());
+
+        jPanel106.setBackground(new java.awt.Color(58, 120, 220));
+        jPanel106.setPreferredSize(new java.awt.Dimension(153, 58));
+        jPanel106.setLayout(new java.awt.BorderLayout());
+
+        jLabel28.setFont(new java.awt.Font("Orbitron", 1, 24)); // NOI18N
+        jLabel28.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel28.setText("   Precio/h  ");
+        jLabel28.setToolTipText("");
+        jLabel28.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
+        jPanel106.add(jLabel28, java.awt.BorderLayout.CENTER);
+
+        jPanel105.add(jPanel106, java.awt.BorderLayout.LINE_START);
+
+        jPanel107.setBackground(new java.awt.Color(58, 120, 220));
+        jPanel107.setPreferredSize(new java.awt.Dimension(10, 58));
+        jPanel107.setLayout(new java.awt.BorderLayout());
+
+        jTextField17.setBackground(new java.awt.Color(255, 255, 255));
+        jTextField17.setFont(new java.awt.Font("Orbitron", 1, 24)); // NOI18N
+        jTextField17.setForeground(new java.awt.Color(51, 51, 51));
+        jTextField17.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 255, 255)));
+        jTextField17.setPreferredSize(new java.awt.Dimension(2, 30));
+        jPanel107.add(jTextField17, java.awt.BorderLayout.SOUTH);
+
+        jPanel108.setBackground(new java.awt.Color(58, 120, 220));
+        jPanel108.setPreferredSize(new java.awt.Dimension(20, 58));
+
+        javax.swing.GroupLayout jPanel108Layout = new javax.swing.GroupLayout(jPanel108);
+        jPanel108.setLayout(jPanel108Layout);
+        jPanel108Layout.setHorizontalGroup(
+            jPanel108Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+        jPanel108Layout.setVerticalGroup(
+            jPanel108Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 58, Short.MAX_VALUE)
+        );
+
+        jPanel107.add(jPanel108, java.awt.BorderLayout.NORTH);
+
+        jPanel105.add(jPanel107, java.awt.BorderLayout.CENTER);
+
+        jPanel109.setBackground(new java.awt.Color(58, 120, 220));
+        jPanel109.setPreferredSize(new java.awt.Dimension(20, 58));
+
+        javax.swing.GroupLayout jPanel109Layout = new javax.swing.GroupLayout(jPanel109);
+        jPanel109.setLayout(jPanel109Layout);
+        jPanel109Layout.setHorizontalGroup(
+            jPanel109Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 20, Short.MAX_VALUE)
+        );
+        jPanel109Layout.setVerticalGroup(
+            jPanel109Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 57, Short.MAX_VALUE)
+        );
+
+        jPanel105.add(jPanel109, java.awt.BorderLayout.LINE_END);
+
+        jPanel89.add(jPanel105);
 
         jPanel1.add(jPanel89);
-
-        jPanel95.setLayout(new java.awt.BorderLayout());
-
-        jPanel96.setBackground(new java.awt.Color(58, 120, 220));
-        jPanel96.setPreferredSize(new java.awt.Dimension(150, 58));
-        jPanel96.setLayout(new java.awt.BorderLayout());
-
-        jLabel26.setFont(new java.awt.Font("Orbitron", 1, 24)); // NOI18N
-        jLabel26.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel26.setText("   Nombre  ");
-        jLabel26.setToolTipText("");
-        jLabel26.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
-        jPanel96.add(jLabel26, java.awt.BorderLayout.CENTER);
-
-        jPanel95.add(jPanel96, java.awt.BorderLayout.WEST);
-
-        jPanel97.setBackground(new java.awt.Color(58, 120, 220));
-        jPanel97.setLayout(new java.awt.BorderLayout());
-
-        jPanel98.setBackground(new java.awt.Color(58, 120, 220));
-        jPanel98.setPreferredSize(new java.awt.Dimension(20, 58));
-        jPanel98.setLayout(new java.awt.BorderLayout());
-
-        jTextField15.setBackground(new java.awt.Color(58, 120, 220));
-        jTextField15.setFont(new java.awt.Font("Orbitron", 1, 24)); // NOI18N
-        jTextField15.setForeground(new java.awt.Color(255, 255, 255));
-        jTextField15.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 255, 255)));
-        jTextField15.setPreferredSize(new java.awt.Dimension(2, 30));
-        jPanel98.add(jTextField15, java.awt.BorderLayout.SOUTH);
-
-        jPanel99.setBackground(new java.awt.Color(58, 120, 220));
-        jPanel99.setPreferredSize(new java.awt.Dimension(20, 58));
-
-        javax.swing.GroupLayout jPanel99Layout = new javax.swing.GroupLayout(jPanel99);
-        jPanel99.setLayout(jPanel99Layout);
-        jPanel99Layout.setHorizontalGroup(
-            jPanel99Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 365, Short.MAX_VALUE)
-        );
-        jPanel99Layout.setVerticalGroup(
-            jPanel99Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 58, Short.MAX_VALUE)
-        );
-
-        jPanel98.add(jPanel99, java.awt.BorderLayout.NORTH);
-
-        jPanel97.add(jPanel98, java.awt.BorderLayout.CENTER);
-
-        jPanel100.setBackground(new java.awt.Color(58, 120, 220));
-        jPanel100.setPreferredSize(new java.awt.Dimension(20, 58));
-
-        javax.swing.GroupLayout jPanel100Layout = new javax.swing.GroupLayout(jPanel100);
-        jPanel100.setLayout(jPanel100Layout);
-        jPanel100Layout.setHorizontalGroup(
-            jPanel100Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 20, Short.MAX_VALUE)
-        );
-        jPanel100Layout.setVerticalGroup(
-            jPanel100Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 40, Short.MAX_VALUE)
-        );
-
-        jPanel97.add(jPanel100, java.awt.BorderLayout.EAST);
-
-        jPanel95.add(jPanel97, java.awt.BorderLayout.CENTER);
-
-        jPanel1.add(jPanel95);
 
         jPanel37.setLayout(new java.awt.BorderLayout());
 
@@ -840,7 +960,7 @@ public class View extends javax.swing.JFrame {
         );
         jPanel40Layout.setVerticalGroup(
             jPanel40Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 40, Short.MAX_VALUE)
+            .addGap(0, 57, Short.MAX_VALUE)
         );
 
         jPanel39.add(jPanel40, java.awt.BorderLayout.EAST);
@@ -885,7 +1005,7 @@ public class View extends javax.swing.JFrame {
         );
         jPanel44Layout.setVerticalGroup(
             jPanel44Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 40, Short.MAX_VALUE)
+            .addGap(0, 57, Short.MAX_VALUE)
         );
 
         jPanel43.add(jPanel44, java.awt.BorderLayout.EAST);
@@ -909,7 +1029,7 @@ public class View extends javax.swing.JFrame {
 
         jLabel17.setFont(new java.awt.Font("Orbitron", 0, 18)); // NOI18N
         jLabel17.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel17.setText("   Sueldo neto");
+        jLabel17.setText("   Bonificación");
         jLabel17.setToolTipText("");
         jLabel17.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
         jPanel46.add(jLabel17, java.awt.BorderLayout.CENTER);
@@ -930,7 +1050,7 @@ public class View extends javax.swing.JFrame {
         );
         jPanel48Layout.setVerticalGroup(
             jPanel48Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 40, Short.MAX_VALUE)
+            .addGap(0, 57, Short.MAX_VALUE)
         );
 
         jPanel47.add(jPanel48, java.awt.BorderLayout.EAST);
@@ -946,23 +1066,117 @@ public class View extends javax.swing.JFrame {
 
         jPanel1.add(jPanel45);
 
+        jPanel110.setLayout(new java.awt.BorderLayout());
+
+        jPanel111.setBackground(new java.awt.Color(58, 120, 220));
+        jPanel111.setPreferredSize(new java.awt.Dimension(200, 58));
+        jPanel111.setLayout(new java.awt.BorderLayout());
+
+        jLabel29.setFont(new java.awt.Font("Orbitron", 0, 18)); // NOI18N
+        jLabel29.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel29.setText("   Sueldo neto");
+        jLabel29.setToolTipText("");
+        jLabel29.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
+        jPanel111.add(jLabel29, java.awt.BorderLayout.CENTER);
+
+        jPanel110.add(jPanel111, java.awt.BorderLayout.WEST);
+
+        jPanel112.setBackground(new java.awt.Color(58, 120, 220));
+        jPanel112.setLayout(new java.awt.BorderLayout());
+
+        jPanel113.setBackground(new java.awt.Color(58, 120, 220));
+        jPanel113.setPreferredSize(new java.awt.Dimension(20, 58));
+
+        javax.swing.GroupLayout jPanel113Layout = new javax.swing.GroupLayout(jPanel113);
+        jPanel113.setLayout(jPanel113Layout);
+        jPanel113Layout.setHorizontalGroup(
+            jPanel113Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 20, Short.MAX_VALUE)
+        );
+        jPanel113Layout.setVerticalGroup(
+            jPanel113Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 57, Short.MAX_VALUE)
+        );
+
+        jPanel112.add(jPanel113, java.awt.BorderLayout.EAST);
+
+        jLabel30.setFont(new java.awt.Font("Orbitron", 0, 18)); // NOI18N
+        jLabel30.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel30.setText("   000.00");
+        jLabel30.setToolTipText("");
+        jLabel30.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
+        jPanel112.add(jLabel30, java.awt.BorderLayout.CENTER);
+
+        jPanel110.add(jPanel112, java.awt.BorderLayout.CENTER);
+
+        jPanel1.add(jPanel110);
+
+        jPanel91.setLayout(new java.awt.BorderLayout());
+
+        jPanel92.setBackground(new java.awt.Color(58, 120, 220));
+        jPanel92.setPreferredSize(new java.awt.Dimension(120, 58));
+        jPanel92.setLayout(new java.awt.BorderLayout());
+        jPanel91.add(jPanel92, java.awt.BorderLayout.WEST);
+
+        jPanel93.setBackground(new java.awt.Color(58, 120, 220));
+        jPanel93.setLayout(new java.awt.BorderLayout());
+
+        jPanel94.setBackground(new java.awt.Color(58, 120, 220));
+        jPanel94.setPreferredSize(new java.awt.Dimension(20, 58));
+        jPanel94.setLayout(new java.awt.BorderLayout());
+
+        jPanel95.setBackground(new java.awt.Color(58, 120, 220));
+        jPanel95.setPreferredSize(new java.awt.Dimension(20, 58));
+
+        javax.swing.GroupLayout jPanel95Layout = new javax.swing.GroupLayout(jPanel95);
+        jPanel95.setLayout(jPanel95Layout);
+        jPanel95Layout.setHorizontalGroup(
+            jPanel95Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 397, Short.MAX_VALUE)
+        );
+        jPanel95Layout.setVerticalGroup(
+            jPanel95Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 58, Short.MAX_VALUE)
+        );
+
+        jPanel94.add(jPanel95, java.awt.BorderLayout.NORTH);
+
+        jPanel93.add(jPanel94, java.awt.BorderLayout.CENTER);
+
+        jPanel96.setBackground(new java.awt.Color(58, 120, 220));
+        jPanel96.setPreferredSize(new java.awt.Dimension(20, 58));
+
+        javax.swing.GroupLayout jPanel96Layout = new javax.swing.GroupLayout(jPanel96);
+        jPanel96.setLayout(jPanel96Layout);
+        jPanel96Layout.setHorizontalGroup(
+            jPanel96Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 20, Short.MAX_VALUE)
+        );
+        jPanel96Layout.setVerticalGroup(
+            jPanel96Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 57, Short.MAX_VALUE)
+        );
+
+        jPanel93.add(jPanel96, java.awt.BorderLayout.EAST);
+
+        jPanel91.add(jPanel93, java.awt.BorderLayout.CENTER);
+
+        jPanel1.add(jPanel91);
+
         jPanel49.setBackground(new java.awt.Color(58, 120, 220));
-        jPanel49.setLayout(new java.awt.BorderLayout());
+        jPanel49.setLayout(new java.awt.GridLayout(1, 2, 1, 0));
 
-        jPanel50.setBackground(new java.awt.Color(58, 120, 220));
-        jPanel50.setPreferredSize(new java.awt.Dimension(40, 58));
-        jPanel50.setLayout(new java.awt.BorderLayout());
-        jPanel49.add(jPanel50, java.awt.BorderLayout.WEST);
-
-        jButton8.setBackground(new java.awt.Color(102, 102, 255));
+        jButton8.setFont(new java.awt.Font("Square721 BT", 1, 18)); // NOI18N
         jButton8.setForeground(new java.awt.Color(255, 255, 255));
+        jButton8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/pe/icons/accounting (2)1.png"))); // NOI18N
         jButton8.setText("Calcular");
-        jPanel49.add(jButton8, java.awt.BorderLayout.CENTER);
+        jPanel49.add(jButton8);
 
-        jPanel51.setBackground(new java.awt.Color(58, 120, 220));
-        jPanel51.setPreferredSize(new java.awt.Dimension(40, 0));
-        jPanel51.setLayout(new java.awt.BorderLayout());
-        jPanel49.add(jPanel51, java.awt.BorderLayout.EAST);
+        jButton9.setFont(new java.awt.Font("Square721 BT", 1, 18)); // NOI18N
+        jButton9.setForeground(new java.awt.Color(255, 255, 255));
+        jButton9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/pe/icons/piggy-bank1.png"))); // NOI18N
+        jButton9.setText("Pagar");
+        jPanel49.add(jButton9);
 
         jPanel1.add(jPanel49);
 
@@ -976,34 +1190,34 @@ public class View extends javax.swing.JFrame {
 
         jScrollPane2.setBackground(new java.awt.Color(102, 102, 255));
 
-        jTable2.setBackground(new java.awt.Color(204, 204, 255));
+        jTable2.setBackground(new java.awt.Color(204, 204, 204));
+        jTable2.setFont(new java.awt.Font("Orbitron", 0, 10)); // NOI18N
         jTable2.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null}
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "Nombre", "Fecha", "Sueldo bruto", "Descuento", "Bonificación", "Sueldo neto"
             }
         ));
         jTable2.setFocusable(false);
         jTable2.setRowHeight(25);
-        jTable2.setRowMargin(1);
         jScrollPane2.setViewportView(jTable2);
 
         centerDownPanel.add(jScrollPane2, java.awt.BorderLayout.CENTER);
@@ -1016,6 +1230,10 @@ public class View extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jTextField10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField10ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField10ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -1058,6 +1276,8 @@ public class View extends javax.swing.JFrame {
     private javax.swing.JPanel centerPanel;
     private javax.swing.JPanel centerUpPanel;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton10;
+    private javax.swing.JButton jButton11;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
@@ -1065,6 +1285,7 @@ public class View extends javax.swing.JFrame {
     private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton7;
     private javax.swing.JButton jButton8;
+    private javax.swing.JButton jButton9;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel13;
@@ -1075,18 +1296,30 @@ public class View extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel24;
-    private javax.swing.JLabel jLabel25;
-    private javax.swing.JLabel jLabel26;
+    private javax.swing.JLabel jLabel27;
+    private javax.swing.JLabel jLabel28;
+    private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel30;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel100;
+    private javax.swing.JPanel jPanel101;
+    private javax.swing.JPanel jPanel102;
+    private javax.swing.JPanel jPanel103;
+    private javax.swing.JPanel jPanel104;
+    private javax.swing.JPanel jPanel105;
+    private javax.swing.JPanel jPanel106;
+    private javax.swing.JPanel jPanel107;
+    private javax.swing.JPanel jPanel108;
+    private javax.swing.JPanel jPanel109;
+    private javax.swing.JPanel jPanel110;
+    private javax.swing.JPanel jPanel111;
+    private javax.swing.JPanel jPanel112;
+    private javax.swing.JPanel jPanel113;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel24;
     private javax.swing.JPanel jPanel25;
@@ -1108,23 +1341,12 @@ public class View extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel47;
     private javax.swing.JPanel jPanel48;
     private javax.swing.JPanel jPanel49;
-    private javax.swing.JPanel jPanel5;
-    private javax.swing.JPanel jPanel50;
-    private javax.swing.JPanel jPanel51;
-    private javax.swing.JPanel jPanel52;
-    private javax.swing.JPanel jPanel53;
     private javax.swing.JPanel jPanel54;
     private javax.swing.JPanel jPanel55;
     private javax.swing.JPanel jPanel56;
     private javax.swing.JPanel jPanel57;
     private javax.swing.JPanel jPanel58;
     private javax.swing.JPanel jPanel59;
-    private javax.swing.JPanel jPanel6;
-    private javax.swing.JPanel jPanel60;
-    private javax.swing.JPanel jPanel61;
-    private javax.swing.JPanel jPanel62;
-    private javax.swing.JPanel jPanel63;
-    private javax.swing.JPanel jPanel64;
     private javax.swing.JPanel jPanel65;
     private javax.swing.JPanel jPanel66;
     private javax.swing.JPanel jPanel67;
@@ -1157,22 +1379,17 @@ public class View extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel94;
     private javax.swing.JPanel jPanel95;
     private javax.swing.JPanel jPanel96;
-    private javax.swing.JPanel jPanel97;
-    private javax.swing.JPanel jPanel98;
-    private javax.swing.JPanel jPanel99;
     private javax.swing.JRadioButton jRadioButton2;
     private javax.swing.JRadioButton jRadioButton3;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTable jTable2;
-    private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField10;
     private javax.swing.JTextField jTextField11;
     private javax.swing.JTextField jTextField12;
     private javax.swing.JTextField jTextField13;
-    private javax.swing.JTextField jTextField14;
-    private javax.swing.JTextField jTextField15;
+    private javax.swing.JTextField jTextField16;
+    private javax.swing.JTextField jTextField17;
     private javax.swing.JTextField jTextField8;
-    private javax.swing.JTextField jTextField9;
     private javax.swing.JPanel rooPanel;
     private javax.swing.JPanel sidePanel;
     // End of variables declaration//GEN-END:variables
