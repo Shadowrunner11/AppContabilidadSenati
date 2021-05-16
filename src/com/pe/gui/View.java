@@ -10,6 +10,9 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import javax.swing.JButton;
 import javax.swing.plaf.basic.BasicButtonUI;
+import javax.swing.plaf.basic.BasicScrollBarUI;
+import javax.swing.plaf.basic.BasicScrollPaneUI;
+import javax.swing.plaf.basic.BasicTableUI;
 
 
 
@@ -24,8 +27,21 @@ public class View extends javax.swing.JFrame {
      */
     public View() {
         initComponents();
+        jTable2.getTableHeader().setBackground(new Color (0,153,204));
+        jTable2.getTableHeader().setOpaque(false);
+        jButton8.setUI(new BasicButtonUI());
         
-        JButton [] btns = {jButton3, jButton1, jButton4, jButton5, jButton6};
+        jScrollPane2.getVerticalScrollBar().setUI(new BasicScrollBarUI() {
+            @Override
+            protected void configureScrollBarColors() {
+                 this.thumbColor = new Color (0,153,204);
+            }
+        });;
+        jScrollPane2.setOpaque(false);
+        jScrollPane2.getVerticalScrollBar().setBackground(new Color (28,34,59));
+        
+        
+        JButton [] btns = {jButton2, jButton3, jButton1, jButton4, jButton5, jButton6, jButton7};
         for (JButton btn : btns){
             btn.setBackground(new Color (48,61,151));
             btn.setUI(new BasicButtonUI());
@@ -82,36 +98,46 @@ public class View extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
-        jPanel4 = new javax.swing.JPanel();
-        jPanel6 = new javax.swing.JPanel();
-        jLabel4 = new javax.swing.JLabel();
-        jPanel5 = new javax.swing.JPanel();
-        jTextField1 = new javax.swing.JTextField();
-        jPanel7 = new javax.swing.JPanel();
-        jPanel8 = new javax.swing.JPanel();
-        jPanel9 = new javax.swing.JPanel();
-        jLabel5 = new javax.swing.JLabel();
-        jPanel10 = new javax.swing.JPanel();
-        jTextField2 = new javax.swing.JTextField();
-        jPanel11 = new javax.swing.JPanel();
-        jPanel12 = new javax.swing.JPanel();
-        jPanel13 = new javax.swing.JPanel();
-        jLabel6 = new javax.swing.JLabel();
-        jPanel14 = new javax.swing.JPanel();
-        jTextField3 = new javax.swing.JTextField();
-        jPanel15 = new javax.swing.JPanel();
-        jPanel16 = new javax.swing.JPanel();
-        jPanel17 = new javax.swing.JPanel();
-        jLabel7 = new javax.swing.JLabel();
-        jPanel18 = new javax.swing.JPanel();
-        jTextField4 = new javax.swing.JTextField();
-        jPanel19 = new javax.swing.JPanel();
-        jPanel20 = new javax.swing.JPanel();
-        jPanel21 = new javax.swing.JPanel();
-        jLabel8 = new javax.swing.JLabel();
-        jPanel22 = new javax.swing.JPanel();
-        jTextField5 = new javax.swing.JTextField();
-        jPanel23 = new javax.swing.JPanel();
+        jPanel54 = new javax.swing.JPanel();
+        jPanel55 = new javax.swing.JPanel();
+        jLabel19 = new javax.swing.JLabel();
+        jPanel56 = new javax.swing.JPanel();
+        jPanel57 = new javax.swing.JPanel();
+        jTextField8 = new javax.swing.JTextField();
+        jPanel58 = new javax.swing.JPanel();
+        jPanel59 = new javax.swing.JPanel();
+        jPanel65 = new javax.swing.JPanel();
+        jPanel66 = new javax.swing.JPanel();
+        jLabel21 = new javax.swing.JLabel();
+        jPanel67 = new javax.swing.JPanel();
+        jPanel68 = new javax.swing.JPanel();
+        jTextField10 = new javax.swing.JTextField();
+        jPanel69 = new javax.swing.JPanel();
+        jPanel70 = new javax.swing.JPanel();
+        jPanel71 = new javax.swing.JPanel();
+        jPanel72 = new javax.swing.JPanel();
+        jLabel22 = new javax.swing.JLabel();
+        jPanel73 = new javax.swing.JPanel();
+        jPanel74 = new javax.swing.JPanel();
+        jTextField11 = new javax.swing.JTextField();
+        jPanel75 = new javax.swing.JPanel();
+        jPanel76 = new javax.swing.JPanel();
+        jPanel77 = new javax.swing.JPanel();
+        jPanel78 = new javax.swing.JPanel();
+        jLabel23 = new javax.swing.JLabel();
+        jPanel79 = new javax.swing.JPanel();
+        jPanel80 = new javax.swing.JPanel();
+        jTextField12 = new javax.swing.JTextField();
+        jPanel81 = new javax.swing.JPanel();
+        jPanel82 = new javax.swing.JPanel();
+        jPanel83 = new javax.swing.JPanel();
+        jPanel84 = new javax.swing.JPanel();
+        jLabel24 = new javax.swing.JLabel();
+        jPanel85 = new javax.swing.JPanel();
+        jPanel86 = new javax.swing.JPanel();
+        jTextField13 = new javax.swing.JTextField();
+        jPanel87 = new javax.swing.JPanel();
+        jPanel88 = new javax.swing.JPanel();
         jPanel24 = new javax.swing.JPanel();
         jPanel25 = new javax.swing.JPanel();
         jLabel9 = new javax.swing.JLabel();
@@ -122,18 +148,22 @@ public class View extends javax.swing.JFrame {
         jRadioButton3 = new javax.swing.JRadioButton();
         jPanel1 = new javax.swing.JPanel();
         jLabel10 = new javax.swing.JLabel();
-        jPanel29 = new javax.swing.JPanel();
-        jPanel30 = new javax.swing.JPanel();
-        jLabel11 = new javax.swing.JLabel();
-        jPanel31 = new javax.swing.JPanel();
-        jTextField6 = new javax.swing.JTextField();
-        jPanel32 = new javax.swing.JPanel();
-        jPanel33 = new javax.swing.JPanel();
-        jPanel34 = new javax.swing.JPanel();
-        jLabel12 = new javax.swing.JLabel();
-        jPanel35 = new javax.swing.JPanel();
-        jTextField7 = new javax.swing.JTextField();
-        jPanel36 = new javax.swing.JPanel();
+        jPanel89 = new javax.swing.JPanel();
+        jPanel90 = new javax.swing.JPanel();
+        jLabel25 = new javax.swing.JLabel();
+        jPanel91 = new javax.swing.JPanel();
+        jPanel92 = new javax.swing.JPanel();
+        jTextField14 = new javax.swing.JTextField();
+        jPanel93 = new javax.swing.JPanel();
+        jPanel94 = new javax.swing.JPanel();
+        jPanel95 = new javax.swing.JPanel();
+        jPanel96 = new javax.swing.JPanel();
+        jLabel26 = new javax.swing.JLabel();
+        jPanel97 = new javax.swing.JPanel();
+        jPanel98 = new javax.swing.JPanel();
+        jTextField15 = new javax.swing.JTextField();
+        jPanel99 = new javax.swing.JPanel();
+        jPanel100 = new javax.swing.JPanel();
         jPanel37 = new javax.swing.JPanel();
         jPanel38 = new javax.swing.JPanel();
         jLabel13 = new javax.swing.JLabel();
@@ -154,11 +184,11 @@ public class View extends javax.swing.JFrame {
         jLabel18 = new javax.swing.JLabel();
         jPanel49 = new javax.swing.JPanel();
         jPanel50 = new javax.swing.JPanel();
-        jToggleButton1 = new javax.swing.JToggleButton();
+        jButton8 = new javax.swing.JButton();
         jPanel51 = new javax.swing.JPanel();
         centerDownPanel = new javax.swing.JPanel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jTable2 = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -167,7 +197,8 @@ public class View extends javax.swing.JFrame {
         rooPanel.setLayout(new java.awt.BorderLayout(10, 0));
 
         sidePanel.setBackground(new java.awt.Color(48, 61, 151));
-        sidePanel.setPreferredSize(new java.awt.Dimension(170, 900));
+        sidePanel.setMinimumSize(new java.awt.Dimension(149, 900));
+        sidePanel.setPreferredSize(new java.awt.Dimension(170, 980));
         sidePanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Orbitron", 0, 18)); // NOI18N
@@ -183,6 +214,7 @@ public class View extends javax.swing.JFrame {
         sidePanel.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 170, -1, -1));
 
         jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/pe/icons/Imagen2.png"))); // NOI18N
+        jButton2.setBorderPainted(false);
         jButton2.setContentAreaFilled(false);
         sidePanel.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 30, 90, 100));
 
@@ -190,24 +222,24 @@ public class View extends javax.swing.JFrame {
         sidePanel.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 240, 90, 100));
 
         jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/pe/icons/add1.png"))); // NOI18N
-        sidePanel.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 360, 90, 100));
+        sidePanel.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 350, 90, 100));
 
         jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/pe/icons/trashcan1.png"))); // NOI18N
-        sidePanel.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 480, 90, 100));
+        sidePanel.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 460, 90, 100));
 
         jButton6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/pe/icons/impresora1.png"))); // NOI18N
-        sidePanel.add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 600, 90, 100));
+        sidePanel.add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 570, 90, 100));
 
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/pe/icons/calendar21.png"))); // NOI18N
-        sidePanel.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 850, 90, 100));
+        sidePanel.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 790, 90, 100));
 
         jButton7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/pe/icons/calendar21.png"))); // NOI18N
-        sidePanel.add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 720, 90, 100));
+        sidePanel.add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 680, 90, 100));
 
         rooPanel.add(sidePanel, java.awt.BorderLayout.WEST);
 
         centerPanel.setBackground(new java.awt.Color(28, 34, 59));
-        centerPanel.setPreferredSize(new java.awt.Dimension(1000, 800));
+        centerPanel.setPreferredSize(new java.awt.Dimension(1500, 800));
         centerPanel.setLayout(new java.awt.BorderLayout(0, 10));
 
         centerUpPanel.setBackground(new java.awt.Color(28, 34, 59));
@@ -231,238 +263,359 @@ public class View extends javax.swing.JFrame {
 
         jPanel2.add(jPanel3);
 
-        jPanel4.setLayout(new java.awt.BorderLayout());
+        jPanel54.setLayout(new java.awt.BorderLayout());
 
-        jPanel6.setBackground(new java.awt.Color(58, 120, 220));
-        jPanel6.setPreferredSize(new java.awt.Dimension(150, 58));
-        jPanel6.setLayout(new java.awt.BorderLayout());
+        jPanel55.setBackground(new java.awt.Color(58, 120, 220));
+        jPanel55.setPreferredSize(new java.awt.Dimension(200, 58));
+        jPanel55.setLayout(new java.awt.BorderLayout());
 
-        jLabel4.setFont(new java.awt.Font("Orbitron", 0, 18)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(0, 255, 255));
-        jLabel4.setText("   Nombre  ");
-        jLabel4.setToolTipText("");
-        jLabel4.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
-        jPanel6.add(jLabel4, java.awt.BorderLayout.CENTER);
+        jLabel19.setFont(new java.awt.Font("Orbitron", 1, 24)); // NOI18N
+        jLabel19.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel19.setText("   Nombre  ");
+        jLabel19.setToolTipText("");
+        jLabel19.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
+        jLabel19.setPreferredSize(new java.awt.Dimension(200, 20));
+        jPanel55.add(jLabel19, java.awt.BorderLayout.CENTER);
 
-        jPanel4.add(jPanel6, java.awt.BorderLayout.WEST);
+        jPanel54.add(jPanel55, java.awt.BorderLayout.WEST);
 
-        jPanel5.setBackground(new java.awt.Color(58, 120, 220));
-        jPanel5.setLayout(new java.awt.BorderLayout());
+        jPanel56.setBackground(new java.awt.Color(58, 120, 220));
+        jPanel56.setLayout(new java.awt.BorderLayout());
 
-        jTextField1.setBackground(new java.awt.Color(58, 120, 220));
-        jTextField1.setFont(new java.awt.Font("Orbitron", 1, 24)); // NOI18N
-        jTextField1.setForeground(new java.awt.Color(255, 255, 255));
-        jTextField1.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 5, 0, new java.awt.Color(0, 255, 255)));
-        jPanel5.add(jTextField1, java.awt.BorderLayout.CENTER);
+        jPanel57.setBackground(new java.awt.Color(58, 120, 220));
+        jPanel57.setPreferredSize(new java.awt.Dimension(20, 58));
+        jPanel57.setLayout(new java.awt.BorderLayout());
 
-        jPanel7.setBackground(new java.awt.Color(58, 120, 220));
-        jPanel7.setPreferredSize(new java.awt.Dimension(20, 58));
+        jTextField8.setBackground(new java.awt.Color(58, 120, 220));
+        jTextField8.setFont(new java.awt.Font("Orbitron", 1, 24)); // NOI18N
+        jTextField8.setForeground(new java.awt.Color(255, 255, 255));
+        jTextField8.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 255, 255)));
+        jTextField8.setPreferredSize(new java.awt.Dimension(2, 30));
+        jPanel57.add(jTextField8, java.awt.BorderLayout.SOUTH);
 
-        javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
-        jPanel7.setLayout(jPanel7Layout);
-        jPanel7Layout.setHorizontalGroup(
-            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        jPanel58.setBackground(new java.awt.Color(58, 120, 220));
+        jPanel58.setPreferredSize(new java.awt.Dimension(20, 58));
+
+        javax.swing.GroupLayout jPanel58Layout = new javax.swing.GroupLayout(jPanel58);
+        jPanel58.setLayout(jPanel58Layout);
+        jPanel58Layout.setHorizontalGroup(
+            jPanel58Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 315, Short.MAX_VALUE)
+        );
+        jPanel58Layout.setVerticalGroup(
+            jPanel58Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 58, Short.MAX_VALUE)
+        );
+
+        jPanel57.add(jPanel58, java.awt.BorderLayout.NORTH);
+
+        jPanel56.add(jPanel57, java.awt.BorderLayout.CENTER);
+
+        jPanel59.setBackground(new java.awt.Color(58, 120, 220));
+        jPanel59.setPreferredSize(new java.awt.Dimension(20, 58));
+
+        javax.swing.GroupLayout jPanel59Layout = new javax.swing.GroupLayout(jPanel59);
+        jPanel59.setLayout(jPanel59Layout);
+        jPanel59Layout.setHorizontalGroup(
+            jPanel59Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 20, Short.MAX_VALUE)
         );
-        jPanel7Layout.setVerticalGroup(
-            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        jPanel59Layout.setVerticalGroup(
+            jPanel59Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 40, Short.MAX_VALUE)
         );
 
-        jPanel5.add(jPanel7, java.awt.BorderLayout.EAST);
+        jPanel56.add(jPanel59, java.awt.BorderLayout.EAST);
 
-        jPanel4.add(jPanel5, java.awt.BorderLayout.CENTER);
+        jPanel54.add(jPanel56, java.awt.BorderLayout.CENTER);
 
-        jPanel2.add(jPanel4);
+        jPanel2.add(jPanel54);
 
-        jPanel8.setLayout(new java.awt.BorderLayout());
+        jPanel65.setLayout(new java.awt.BorderLayout());
 
-        jPanel9.setBackground(new java.awt.Color(58, 120, 220));
-        jPanel9.setPreferredSize(new java.awt.Dimension(150, 58));
-        jPanel9.setLayout(new java.awt.BorderLayout());
+        jPanel66.setBackground(new java.awt.Color(58, 120, 220));
+        jPanel66.setPreferredSize(new java.awt.Dimension(200, 58));
+        jPanel66.setLayout(new java.awt.BorderLayout());
 
-        jLabel5.setFont(new java.awt.Font("Orbitron", 0, 18)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(0, 255, 255));
-        jLabel5.setText("   Dirección");
-        jLabel5.setToolTipText("");
-        jLabel5.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
-        jPanel9.add(jLabel5, java.awt.BorderLayout.CENTER);
+        jLabel21.setFont(new java.awt.Font("Orbitron", 1, 24)); // NOI18N
+        jLabel21.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel21.setText("   Nombre  ");
+        jLabel21.setToolTipText("");
+        jLabel21.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
+        jLabel21.setPreferredSize(new java.awt.Dimension(200, 20));
+        jPanel66.add(jLabel21, java.awt.BorderLayout.CENTER);
 
-        jPanel8.add(jPanel9, java.awt.BorderLayout.WEST);
+        jPanel65.add(jPanel66, java.awt.BorderLayout.WEST);
 
-        jPanel10.setBackground(new java.awt.Color(58, 120, 220));
-        jPanel10.setLayout(new java.awt.BorderLayout());
+        jPanel67.setBackground(new java.awt.Color(58, 120, 220));
+        jPanel67.setLayout(new java.awt.BorderLayout());
 
-        jTextField2.setBackground(new java.awt.Color(58, 120, 220));
-        jTextField2.setFont(new java.awt.Font("Orbitron", 1, 24)); // NOI18N
-        jTextField2.setForeground(new java.awt.Color(255, 255, 255));
-        jTextField2.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 5, 0, new java.awt.Color(0, 255, 255)));
-        jPanel10.add(jTextField2, java.awt.BorderLayout.CENTER);
+        jPanel68.setBackground(new java.awt.Color(58, 120, 220));
+        jPanel68.setPreferredSize(new java.awt.Dimension(20, 58));
+        jPanel68.setLayout(new java.awt.BorderLayout());
 
-        jPanel11.setBackground(new java.awt.Color(58, 120, 220));
-        jPanel11.setPreferredSize(new java.awt.Dimension(20, 58));
+        jTextField10.setBackground(new java.awt.Color(58, 120, 220));
+        jTextField10.setFont(new java.awt.Font("Orbitron", 1, 24)); // NOI18N
+        jTextField10.setForeground(new java.awt.Color(255, 255, 255));
+        jTextField10.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 255, 255)));
+        jTextField10.setPreferredSize(new java.awt.Dimension(2, 30));
+        jPanel68.add(jTextField10, java.awt.BorderLayout.SOUTH);
 
-        javax.swing.GroupLayout jPanel11Layout = new javax.swing.GroupLayout(jPanel11);
-        jPanel11.setLayout(jPanel11Layout);
-        jPanel11Layout.setHorizontalGroup(
-            jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        jPanel69.setBackground(new java.awt.Color(58, 120, 220));
+        jPanel69.setPreferredSize(new java.awt.Dimension(20, 58));
+
+        javax.swing.GroupLayout jPanel69Layout = new javax.swing.GroupLayout(jPanel69);
+        jPanel69.setLayout(jPanel69Layout);
+        jPanel69Layout.setHorizontalGroup(
+            jPanel69Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 315, Short.MAX_VALUE)
+        );
+        jPanel69Layout.setVerticalGroup(
+            jPanel69Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 58, Short.MAX_VALUE)
+        );
+
+        jPanel68.add(jPanel69, java.awt.BorderLayout.NORTH);
+
+        jPanel67.add(jPanel68, java.awt.BorderLayout.CENTER);
+
+        jPanel70.setBackground(new java.awt.Color(58, 120, 220));
+        jPanel70.setPreferredSize(new java.awt.Dimension(20, 58));
+
+        javax.swing.GroupLayout jPanel70Layout = new javax.swing.GroupLayout(jPanel70);
+        jPanel70.setLayout(jPanel70Layout);
+        jPanel70Layout.setHorizontalGroup(
+            jPanel70Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 20, Short.MAX_VALUE)
         );
-        jPanel11Layout.setVerticalGroup(
-            jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        jPanel70Layout.setVerticalGroup(
+            jPanel70Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 40, Short.MAX_VALUE)
         );
 
-        jPanel10.add(jPanel11, java.awt.BorderLayout.EAST);
+        jPanel67.add(jPanel70, java.awt.BorderLayout.EAST);
 
-        jPanel8.add(jPanel10, java.awt.BorderLayout.CENTER);
+        jPanel65.add(jPanel67, java.awt.BorderLayout.CENTER);
 
-        jPanel2.add(jPanel8);
+        jPanel2.add(jPanel65);
 
-        jPanel12.setLayout(new java.awt.BorderLayout());
+        jPanel71.setLayout(new java.awt.BorderLayout());
 
-        jPanel13.setBackground(new java.awt.Color(58, 120, 220));
-        jPanel13.setPreferredSize(new java.awt.Dimension(150, 58));
-        jPanel13.setLayout(new java.awt.BorderLayout());
+        jPanel72.setBackground(new java.awt.Color(58, 120, 220));
+        jPanel72.setPreferredSize(new java.awt.Dimension(200, 58));
+        jPanel72.setLayout(new java.awt.BorderLayout());
 
-        jLabel6.setFont(new java.awt.Font("Orbitron", 0, 18)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(0, 255, 255));
-        jLabel6.setText("   Celular");
-        jLabel6.setToolTipText("");
-        jLabel6.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
-        jPanel13.add(jLabel6, java.awt.BorderLayout.CENTER);
+        jLabel22.setFont(new java.awt.Font("Orbitron", 1, 24)); // NOI18N
+        jLabel22.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel22.setText("   Nombre  ");
+        jLabel22.setToolTipText("");
+        jLabel22.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
+        jLabel22.setPreferredSize(new java.awt.Dimension(200, 20));
+        jPanel72.add(jLabel22, java.awt.BorderLayout.CENTER);
 
-        jPanel12.add(jPanel13, java.awt.BorderLayout.WEST);
+        jPanel71.add(jPanel72, java.awt.BorderLayout.WEST);
 
-        jPanel14.setBackground(new java.awt.Color(58, 120, 220));
-        jPanel14.setLayout(new java.awt.BorderLayout());
+        jPanel73.setBackground(new java.awt.Color(58, 120, 220));
+        jPanel73.setLayout(new java.awt.BorderLayout());
 
-        jTextField3.setBackground(new java.awt.Color(58, 120, 220));
-        jTextField3.setFont(new java.awt.Font("Orbitron", 1, 24)); // NOI18N
-        jTextField3.setForeground(new java.awt.Color(255, 255, 255));
-        jTextField3.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 5, 0, new java.awt.Color(0, 255, 255)));
-        jPanel14.add(jTextField3, java.awt.BorderLayout.CENTER);
+        jPanel74.setBackground(new java.awt.Color(58, 120, 220));
+        jPanel74.setPreferredSize(new java.awt.Dimension(20, 58));
+        jPanel74.setLayout(new java.awt.BorderLayout());
 
-        jPanel15.setBackground(new java.awt.Color(58, 120, 220));
-        jPanel15.setPreferredSize(new java.awt.Dimension(20, 58));
+        jTextField11.setBackground(new java.awt.Color(58, 120, 220));
+        jTextField11.setFont(new java.awt.Font("Orbitron", 1, 24)); // NOI18N
+        jTextField11.setForeground(new java.awt.Color(255, 255, 255));
+        jTextField11.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 255, 255)));
+        jTextField11.setPreferredSize(new java.awt.Dimension(2, 30));
+        jPanel74.add(jTextField11, java.awt.BorderLayout.SOUTH);
 
-        javax.swing.GroupLayout jPanel15Layout = new javax.swing.GroupLayout(jPanel15);
-        jPanel15.setLayout(jPanel15Layout);
-        jPanel15Layout.setHorizontalGroup(
-            jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        jPanel75.setBackground(new java.awt.Color(58, 120, 220));
+        jPanel75.setPreferredSize(new java.awt.Dimension(20, 58));
+
+        javax.swing.GroupLayout jPanel75Layout = new javax.swing.GroupLayout(jPanel75);
+        jPanel75.setLayout(jPanel75Layout);
+        jPanel75Layout.setHorizontalGroup(
+            jPanel75Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 315, Short.MAX_VALUE)
+        );
+        jPanel75Layout.setVerticalGroup(
+            jPanel75Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 58, Short.MAX_VALUE)
+        );
+
+        jPanel74.add(jPanel75, java.awt.BorderLayout.NORTH);
+
+        jPanel73.add(jPanel74, java.awt.BorderLayout.CENTER);
+
+        jPanel76.setBackground(new java.awt.Color(58, 120, 220));
+        jPanel76.setPreferredSize(new java.awt.Dimension(20, 58));
+
+        javax.swing.GroupLayout jPanel76Layout = new javax.swing.GroupLayout(jPanel76);
+        jPanel76.setLayout(jPanel76Layout);
+        jPanel76Layout.setHorizontalGroup(
+            jPanel76Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 20, Short.MAX_VALUE)
         );
-        jPanel15Layout.setVerticalGroup(
-            jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        jPanel76Layout.setVerticalGroup(
+            jPanel76Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 40, Short.MAX_VALUE)
         );
 
-        jPanel14.add(jPanel15, java.awt.BorderLayout.EAST);
+        jPanel73.add(jPanel76, java.awt.BorderLayout.EAST);
 
-        jPanel12.add(jPanel14, java.awt.BorderLayout.CENTER);
+        jPanel71.add(jPanel73, java.awt.BorderLayout.CENTER);
 
-        jPanel2.add(jPanel12);
+        jPanel2.add(jPanel71);
 
-        jPanel16.setLayout(new java.awt.BorderLayout());
+        jPanel77.setLayout(new java.awt.BorderLayout());
 
-        jPanel17.setBackground(new java.awt.Color(58, 120, 220));
-        jPanel17.setPreferredSize(new java.awt.Dimension(150, 58));
-        jPanel17.setLayout(new java.awt.BorderLayout());
+        jPanel78.setBackground(new java.awt.Color(58, 120, 220));
+        jPanel78.setPreferredSize(new java.awt.Dimension(200, 58));
+        jPanel78.setLayout(new java.awt.BorderLayout());
 
-        jLabel7.setFont(new java.awt.Font("Orbitron", 0, 18)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(0, 255, 255));
-        jLabel7.setText("   Correo");
-        jLabel7.setToolTipText("");
-        jLabel7.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
-        jPanel17.add(jLabel7, java.awt.BorderLayout.CENTER);
+        jLabel23.setFont(new java.awt.Font("Orbitron", 1, 24)); // NOI18N
+        jLabel23.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel23.setText("   Nombre  ");
+        jLabel23.setToolTipText("");
+        jLabel23.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
+        jLabel23.setPreferredSize(new java.awt.Dimension(200, 20));
+        jPanel78.add(jLabel23, java.awt.BorderLayout.CENTER);
 
-        jPanel16.add(jPanel17, java.awt.BorderLayout.WEST);
+        jPanel77.add(jPanel78, java.awt.BorderLayout.WEST);
 
-        jPanel18.setBackground(new java.awt.Color(58, 120, 220));
-        jPanel18.setLayout(new java.awt.BorderLayout());
+        jPanel79.setBackground(new java.awt.Color(58, 120, 220));
+        jPanel79.setLayout(new java.awt.BorderLayout());
 
-        jTextField4.setBackground(new java.awt.Color(58, 120, 220));
-        jTextField4.setFont(new java.awt.Font("Orbitron", 1, 24)); // NOI18N
-        jTextField4.setForeground(new java.awt.Color(255, 255, 255));
-        jTextField4.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 5, 0, new java.awt.Color(0, 255, 255)));
-        jPanel18.add(jTextField4, java.awt.BorderLayout.CENTER);
+        jPanel80.setBackground(new java.awt.Color(58, 120, 220));
+        jPanel80.setPreferredSize(new java.awt.Dimension(20, 58));
+        jPanel80.setLayout(new java.awt.BorderLayout());
 
-        jPanel19.setBackground(new java.awt.Color(58, 120, 220));
-        jPanel19.setPreferredSize(new java.awt.Dimension(20, 58));
+        jTextField12.setBackground(new java.awt.Color(58, 120, 220));
+        jTextField12.setFont(new java.awt.Font("Orbitron", 1, 24)); // NOI18N
+        jTextField12.setForeground(new java.awt.Color(255, 255, 255));
+        jTextField12.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 255, 255)));
+        jTextField12.setPreferredSize(new java.awt.Dimension(2, 30));
+        jPanel80.add(jTextField12, java.awt.BorderLayout.SOUTH);
 
-        javax.swing.GroupLayout jPanel19Layout = new javax.swing.GroupLayout(jPanel19);
-        jPanel19.setLayout(jPanel19Layout);
-        jPanel19Layout.setHorizontalGroup(
-            jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        jPanel81.setBackground(new java.awt.Color(58, 120, 220));
+        jPanel81.setPreferredSize(new java.awt.Dimension(20, 58));
+
+        javax.swing.GroupLayout jPanel81Layout = new javax.swing.GroupLayout(jPanel81);
+        jPanel81.setLayout(jPanel81Layout);
+        jPanel81Layout.setHorizontalGroup(
+            jPanel81Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 315, Short.MAX_VALUE)
+        );
+        jPanel81Layout.setVerticalGroup(
+            jPanel81Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 58, Short.MAX_VALUE)
+        );
+
+        jPanel80.add(jPanel81, java.awt.BorderLayout.NORTH);
+
+        jPanel79.add(jPanel80, java.awt.BorderLayout.CENTER);
+
+        jPanel82.setBackground(new java.awt.Color(58, 120, 220));
+        jPanel82.setPreferredSize(new java.awt.Dimension(20, 58));
+
+        javax.swing.GroupLayout jPanel82Layout = new javax.swing.GroupLayout(jPanel82);
+        jPanel82.setLayout(jPanel82Layout);
+        jPanel82Layout.setHorizontalGroup(
+            jPanel82Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 20, Short.MAX_VALUE)
         );
-        jPanel19Layout.setVerticalGroup(
-            jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        jPanel82Layout.setVerticalGroup(
+            jPanel82Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 40, Short.MAX_VALUE)
         );
 
-        jPanel18.add(jPanel19, java.awt.BorderLayout.EAST);
+        jPanel79.add(jPanel82, java.awt.BorderLayout.EAST);
 
-        jPanel16.add(jPanel18, java.awt.BorderLayout.CENTER);
+        jPanel77.add(jPanel79, java.awt.BorderLayout.CENTER);
 
-        jPanel2.add(jPanel16);
+        jPanel2.add(jPanel77);
 
-        jPanel20.setLayout(new java.awt.BorderLayout());
+        jPanel83.setLayout(new java.awt.BorderLayout());
 
-        jPanel21.setBackground(new java.awt.Color(58, 120, 220));
-        jPanel21.setPreferredSize(new java.awt.Dimension(150, 58));
-        jPanel21.setLayout(new java.awt.BorderLayout());
+        jPanel84.setBackground(new java.awt.Color(58, 120, 220));
+        jPanel84.setPreferredSize(new java.awt.Dimension(200, 58));
+        jPanel84.setLayout(new java.awt.BorderLayout());
 
-        jLabel8.setFont(new java.awt.Font("Orbitron", 0, 18)); // NOI18N
-        jLabel8.setForeground(new java.awt.Color(0, 255, 255));
-        jLabel8.setText("   RUC");
-        jLabel8.setToolTipText("");
-        jLabel8.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
-        jPanel21.add(jLabel8, java.awt.BorderLayout.CENTER);
+        jLabel24.setFont(new java.awt.Font("Orbitron", 1, 24)); // NOI18N
+        jLabel24.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel24.setText("   Nombre  ");
+        jLabel24.setToolTipText("");
+        jLabel24.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
+        jLabel24.setPreferredSize(new java.awt.Dimension(200, 20));
+        jPanel84.add(jLabel24, java.awt.BorderLayout.CENTER);
 
-        jPanel20.add(jPanel21, java.awt.BorderLayout.WEST);
+        jPanel83.add(jPanel84, java.awt.BorderLayout.WEST);
 
-        jPanel22.setBackground(new java.awt.Color(58, 120, 220));
-        jPanel22.setLayout(new java.awt.BorderLayout());
+        jPanel85.setBackground(new java.awt.Color(58, 120, 220));
+        jPanel85.setLayout(new java.awt.BorderLayout());
 
-        jTextField5.setBackground(new java.awt.Color(58, 120, 220));
-        jTextField5.setFont(new java.awt.Font("Orbitron", 1, 24)); // NOI18N
-        jTextField5.setForeground(new java.awt.Color(255, 255, 255));
-        jTextField5.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 5, 0, new java.awt.Color(0, 255, 255)));
-        jPanel22.add(jTextField5, java.awt.BorderLayout.CENTER);
+        jPanel86.setBackground(new java.awt.Color(58, 120, 220));
+        jPanel86.setPreferredSize(new java.awt.Dimension(20, 58));
+        jPanel86.setLayout(new java.awt.BorderLayout());
 
-        jPanel23.setBackground(new java.awt.Color(58, 120, 220));
-        jPanel23.setPreferredSize(new java.awt.Dimension(20, 58));
+        jTextField13.setBackground(new java.awt.Color(58, 120, 220));
+        jTextField13.setFont(new java.awt.Font("Orbitron", 1, 24)); // NOI18N
+        jTextField13.setForeground(new java.awt.Color(255, 255, 255));
+        jTextField13.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 255, 255)));
+        jTextField13.setPreferredSize(new java.awt.Dimension(2, 30));
+        jPanel86.add(jTextField13, java.awt.BorderLayout.SOUTH);
 
-        javax.swing.GroupLayout jPanel23Layout = new javax.swing.GroupLayout(jPanel23);
-        jPanel23.setLayout(jPanel23Layout);
-        jPanel23Layout.setHorizontalGroup(
-            jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        jPanel87.setBackground(new java.awt.Color(58, 120, 220));
+        jPanel87.setPreferredSize(new java.awt.Dimension(20, 58));
+
+        javax.swing.GroupLayout jPanel87Layout = new javax.swing.GroupLayout(jPanel87);
+        jPanel87.setLayout(jPanel87Layout);
+        jPanel87Layout.setHorizontalGroup(
+            jPanel87Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 315, Short.MAX_VALUE)
+        );
+        jPanel87Layout.setVerticalGroup(
+            jPanel87Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 58, Short.MAX_VALUE)
+        );
+
+        jPanel86.add(jPanel87, java.awt.BorderLayout.NORTH);
+
+        jPanel85.add(jPanel86, java.awt.BorderLayout.CENTER);
+
+        jPanel88.setBackground(new java.awt.Color(58, 120, 220));
+        jPanel88.setPreferredSize(new java.awt.Dimension(20, 58));
+
+        javax.swing.GroupLayout jPanel88Layout = new javax.swing.GroupLayout(jPanel88);
+        jPanel88.setLayout(jPanel88Layout);
+        jPanel88Layout.setHorizontalGroup(
+            jPanel88Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 20, Short.MAX_VALUE)
         );
-        jPanel23Layout.setVerticalGroup(
-            jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        jPanel88Layout.setVerticalGroup(
+            jPanel88Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 40, Short.MAX_VALUE)
         );
 
-        jPanel22.add(jPanel23, java.awt.BorderLayout.EAST);
+        jPanel85.add(jPanel88, java.awt.BorderLayout.EAST);
 
-        jPanel20.add(jPanel22, java.awt.BorderLayout.CENTER);
+        jPanel83.add(jPanel85, java.awt.BorderLayout.CENTER);
 
-        jPanel2.add(jPanel20);
+        jPanel2.add(jPanel83);
 
         jPanel24.setBackground(new java.awt.Color(58, 120, 220));
         jPanel24.setLayout(new java.awt.BorderLayout(10, 0));
 
         jPanel25.setBackground(new java.awt.Color(58, 120, 220));
-        jPanel25.setPreferredSize(new java.awt.Dimension(150, 58));
+        jPanel25.setPreferredSize(new java.awt.Dimension(200, 58));
         jPanel25.setLayout(new java.awt.BorderLayout());
 
-        jLabel9.setFont(new java.awt.Font("Orbitron", 0, 18)); // NOI18N
-        jLabel9.setForeground(new java.awt.Color(0, 255, 255));
+        jLabel9.setFont(new java.awt.Font("Orbitron", 1, 24)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(255, 255, 255));
         jLabel9.setText("   Estado Civil");
         jLabel9.setToolTipText("");
         jLabel9.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
+        jLabel9.setPreferredSize(new java.awt.Dimension(200, 20));
         jPanel25.add(jLabel9, java.awt.BorderLayout.CENTER);
 
         jPanel24.add(jPanel25, java.awt.BorderLayout.WEST);
@@ -477,7 +630,7 @@ public class View extends javax.swing.JFrame {
         jPanel27.setLayout(jPanel27Layout);
         jPanel27Layout.setHorizontalGroup(
             jPanel27Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 295, Short.MAX_VALUE)
+            .addGap(0, 325, Short.MAX_VALUE)
         );
         jPanel27Layout.setVerticalGroup(
             jPanel27Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -490,12 +643,14 @@ public class View extends javax.swing.JFrame {
         jPanel28.setPreferredSize(new java.awt.Dimension(20, 25));
         jPanel28.setLayout(new java.awt.BorderLayout(20, 0));
 
+        jRadioButton2.setBackground(new java.awt.Color(58, 120, 220));
         buttonGroup1.add(jRadioButton2);
         jRadioButton2.setFont(new java.awt.Font("Orbitron", 0, 14)); // NOI18N
         jRadioButton2.setForeground(new java.awt.Color(255, 255, 255));
         jRadioButton2.setText("Soltero");
         jPanel28.add(jRadioButton2, java.awt.BorderLayout.LINE_START);
 
+        jRadioButton3.setBackground(new java.awt.Color(58, 120, 220));
         buttonGroup1.add(jRadioButton3);
         jRadioButton3.setFont(new java.awt.Font("Orbitron", 0, 14)); // NOI18N
         jRadioButton3.setForeground(new java.awt.Color(255, 255, 255));
@@ -522,93 +677,139 @@ public class View extends javax.swing.JFrame {
         jLabel10.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
         jPanel1.add(jLabel10);
 
-        jPanel29.setLayout(new java.awt.BorderLayout());
+        jPanel89.setLayout(new java.awt.BorderLayout());
 
-        jPanel30.setBackground(new java.awt.Color(58, 120, 220));
-        jPanel30.setPreferredSize(new java.awt.Dimension(220, 58));
-        jPanel30.setLayout(new java.awt.BorderLayout());
+        jPanel90.setBackground(new java.awt.Color(58, 120, 220));
+        jPanel90.setPreferredSize(new java.awt.Dimension(150, 58));
+        jPanel90.setLayout(new java.awt.BorderLayout());
 
-        jLabel11.setFont(new java.awt.Font("Orbitron", 0, 18)); // NOI18N
-        jLabel11.setForeground(new java.awt.Color(0, 255, 255));
-        jLabel11.setText("   Horas  ");
-        jLabel11.setToolTipText("");
-        jLabel11.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
-        jPanel30.add(jLabel11, java.awt.BorderLayout.CENTER);
+        jLabel25.setFont(new java.awt.Font("Orbitron", 1, 24)); // NOI18N
+        jLabel25.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel25.setText("   Nombre  ");
+        jLabel25.setToolTipText("");
+        jLabel25.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
+        jPanel90.add(jLabel25, java.awt.BorderLayout.CENTER);
 
-        jPanel29.add(jPanel30, java.awt.BorderLayout.WEST);
+        jPanel89.add(jPanel90, java.awt.BorderLayout.WEST);
 
-        jPanel31.setBackground(new java.awt.Color(58, 120, 220));
-        jPanel31.setLayout(new java.awt.BorderLayout());
+        jPanel91.setBackground(new java.awt.Color(58, 120, 220));
+        jPanel91.setLayout(new java.awt.BorderLayout());
 
-        jTextField6.setBackground(new java.awt.Color(58, 120, 220));
-        jTextField6.setFont(new java.awt.Font("Orbitron", 1, 24)); // NOI18N
-        jTextField6.setForeground(new java.awt.Color(255, 255, 255));
-        jTextField6.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 5, 0, new java.awt.Color(0, 255, 255)));
-        jPanel31.add(jTextField6, java.awt.BorderLayout.CENTER);
+        jPanel92.setBackground(new java.awt.Color(58, 120, 220));
+        jPanel92.setPreferredSize(new java.awt.Dimension(20, 58));
+        jPanel92.setLayout(new java.awt.BorderLayout());
 
-        jPanel32.setBackground(new java.awt.Color(58, 120, 220));
-        jPanel32.setPreferredSize(new java.awt.Dimension(30, 58));
+        jTextField14.setBackground(new java.awt.Color(58, 120, 220));
+        jTextField14.setFont(new java.awt.Font("Orbitron", 1, 24)); // NOI18N
+        jTextField14.setForeground(new java.awt.Color(255, 255, 255));
+        jTextField14.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 255, 255)));
+        jTextField14.setPreferredSize(new java.awt.Dimension(2, 30));
+        jPanel92.add(jTextField14, java.awt.BorderLayout.SOUTH);
 
-        javax.swing.GroupLayout jPanel32Layout = new javax.swing.GroupLayout(jPanel32);
-        jPanel32.setLayout(jPanel32Layout);
-        jPanel32Layout.setHorizontalGroup(
-            jPanel32Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 30, Short.MAX_VALUE)
+        jPanel93.setBackground(new java.awt.Color(58, 120, 220));
+        jPanel93.setPreferredSize(new java.awt.Dimension(20, 58));
+
+        javax.swing.GroupLayout jPanel93Layout = new javax.swing.GroupLayout(jPanel93);
+        jPanel93.setLayout(jPanel93Layout);
+        jPanel93Layout.setHorizontalGroup(
+            jPanel93Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 365, Short.MAX_VALUE)
         );
-        jPanel32Layout.setVerticalGroup(
-            jPanel32Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        jPanel93Layout.setVerticalGroup(
+            jPanel93Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 58, Short.MAX_VALUE)
+        );
+
+        jPanel92.add(jPanel93, java.awt.BorderLayout.NORTH);
+
+        jPanel91.add(jPanel92, java.awt.BorderLayout.CENTER);
+
+        jPanel94.setBackground(new java.awt.Color(58, 120, 220));
+        jPanel94.setPreferredSize(new java.awt.Dimension(20, 58));
+
+        javax.swing.GroupLayout jPanel94Layout = new javax.swing.GroupLayout(jPanel94);
+        jPanel94.setLayout(jPanel94Layout);
+        jPanel94Layout.setHorizontalGroup(
+            jPanel94Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 20, Short.MAX_VALUE)
+        );
+        jPanel94Layout.setVerticalGroup(
+            jPanel94Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 40, Short.MAX_VALUE)
         );
 
-        jPanel31.add(jPanel32, java.awt.BorderLayout.EAST);
+        jPanel91.add(jPanel94, java.awt.BorderLayout.EAST);
 
-        jPanel29.add(jPanel31, java.awt.BorderLayout.CENTER);
+        jPanel89.add(jPanel91, java.awt.BorderLayout.CENTER);
 
-        jPanel1.add(jPanel29);
+        jPanel1.add(jPanel89);
 
-        jPanel33.setLayout(new java.awt.BorderLayout());
+        jPanel95.setLayout(new java.awt.BorderLayout());
 
-        jPanel34.setBackground(new java.awt.Color(58, 120, 220));
-        jPanel34.setPreferredSize(new java.awt.Dimension(220, 58));
-        jPanel34.setLayout(new java.awt.BorderLayout());
+        jPanel96.setBackground(new java.awt.Color(58, 120, 220));
+        jPanel96.setPreferredSize(new java.awt.Dimension(150, 58));
+        jPanel96.setLayout(new java.awt.BorderLayout());
 
-        jLabel12.setFont(new java.awt.Font("Orbitron", 0, 18)); // NOI18N
-        jLabel12.setForeground(new java.awt.Color(0, 255, 255));
-        jLabel12.setText("   Precio/hora");
-        jLabel12.setToolTipText("");
-        jLabel12.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
-        jPanel34.add(jLabel12, java.awt.BorderLayout.CENTER);
+        jLabel26.setFont(new java.awt.Font("Orbitron", 1, 24)); // NOI18N
+        jLabel26.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel26.setText("   Nombre  ");
+        jLabel26.setToolTipText("");
+        jLabel26.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
+        jPanel96.add(jLabel26, java.awt.BorderLayout.CENTER);
 
-        jPanel33.add(jPanel34, java.awt.BorderLayout.WEST);
+        jPanel95.add(jPanel96, java.awt.BorderLayout.WEST);
 
-        jPanel35.setBackground(new java.awt.Color(58, 120, 220));
-        jPanel35.setLayout(new java.awt.BorderLayout());
+        jPanel97.setBackground(new java.awt.Color(58, 120, 220));
+        jPanel97.setLayout(new java.awt.BorderLayout());
 
-        jTextField7.setBackground(new java.awt.Color(58, 120, 220));
-        jTextField7.setFont(new java.awt.Font("Orbitron", 1, 24)); // NOI18N
-        jTextField7.setForeground(new java.awt.Color(255, 255, 255));
-        jTextField7.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 5, 0, new java.awt.Color(0, 255, 255)));
-        jPanel35.add(jTextField7, java.awt.BorderLayout.CENTER);
+        jPanel98.setBackground(new java.awt.Color(58, 120, 220));
+        jPanel98.setPreferredSize(new java.awt.Dimension(20, 58));
+        jPanel98.setLayout(new java.awt.BorderLayout());
 
-        jPanel36.setBackground(new java.awt.Color(58, 120, 220));
-        jPanel36.setPreferredSize(new java.awt.Dimension(30, 58));
+        jTextField15.setBackground(new java.awt.Color(58, 120, 220));
+        jTextField15.setFont(new java.awt.Font("Orbitron", 1, 24)); // NOI18N
+        jTextField15.setForeground(new java.awt.Color(255, 255, 255));
+        jTextField15.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 255, 255)));
+        jTextField15.setPreferredSize(new java.awt.Dimension(2, 30));
+        jPanel98.add(jTextField15, java.awt.BorderLayout.SOUTH);
 
-        javax.swing.GroupLayout jPanel36Layout = new javax.swing.GroupLayout(jPanel36);
-        jPanel36.setLayout(jPanel36Layout);
-        jPanel36Layout.setHorizontalGroup(
-            jPanel36Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 30, Short.MAX_VALUE)
+        jPanel99.setBackground(new java.awt.Color(58, 120, 220));
+        jPanel99.setPreferredSize(new java.awt.Dimension(20, 58));
+
+        javax.swing.GroupLayout jPanel99Layout = new javax.swing.GroupLayout(jPanel99);
+        jPanel99.setLayout(jPanel99Layout);
+        jPanel99Layout.setHorizontalGroup(
+            jPanel99Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 365, Short.MAX_VALUE)
         );
-        jPanel36Layout.setVerticalGroup(
-            jPanel36Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        jPanel99Layout.setVerticalGroup(
+            jPanel99Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 58, Short.MAX_VALUE)
+        );
+
+        jPanel98.add(jPanel99, java.awt.BorderLayout.NORTH);
+
+        jPanel97.add(jPanel98, java.awt.BorderLayout.CENTER);
+
+        jPanel100.setBackground(new java.awt.Color(58, 120, 220));
+        jPanel100.setPreferredSize(new java.awt.Dimension(20, 58));
+
+        javax.swing.GroupLayout jPanel100Layout = new javax.swing.GroupLayout(jPanel100);
+        jPanel100.setLayout(jPanel100Layout);
+        jPanel100Layout.setHorizontalGroup(
+            jPanel100Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 20, Short.MAX_VALUE)
+        );
+        jPanel100Layout.setVerticalGroup(
+            jPanel100Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 40, Short.MAX_VALUE)
         );
 
-        jPanel35.add(jPanel36, java.awt.BorderLayout.EAST);
+        jPanel97.add(jPanel100, java.awt.BorderLayout.EAST);
 
-        jPanel33.add(jPanel35, java.awt.BorderLayout.CENTER);
+        jPanel95.add(jPanel97, java.awt.BorderLayout.CENTER);
 
-        jPanel1.add(jPanel33);
+        jPanel1.add(jPanel95);
 
         jPanel37.setLayout(new java.awt.BorderLayout());
 
@@ -745,6 +946,7 @@ public class View extends javax.swing.JFrame {
 
         jPanel1.add(jPanel45);
 
+        jPanel49.setBackground(new java.awt.Color(58, 120, 220));
         jPanel49.setLayout(new java.awt.BorderLayout());
 
         jPanel50.setBackground(new java.awt.Color(58, 120, 220));
@@ -752,12 +954,10 @@ public class View extends javax.swing.JFrame {
         jPanel50.setLayout(new java.awt.BorderLayout());
         jPanel49.add(jPanel50, java.awt.BorderLayout.WEST);
 
-        jToggleButton1.setBackground(new java.awt.Color(153, 153, 255));
-        jToggleButton1.setFont(new java.awt.Font("Orbitron", 0, 14)); // NOI18N
-        jToggleButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jToggleButton1.setText("Calcular");
-        jToggleButton1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(58, 120, 220), 3));
-        jPanel49.add(jToggleButton1, java.awt.BorderLayout.CENTER);
+        jButton8.setBackground(new java.awt.Color(102, 102, 255));
+        jButton8.setForeground(new java.awt.Color(255, 255, 255));
+        jButton8.setText("Calcular");
+        jPanel49.add(jButton8, java.awt.BorderLayout.CENTER);
 
         jPanel51.setBackground(new java.awt.Color(58, 120, 220));
         jPanel51.setPreferredSize(new java.awt.Dimension(40, 0));
@@ -770,16 +970,24 @@ public class View extends javax.swing.JFrame {
 
         centerPanel.add(centerUpPanel, java.awt.BorderLayout.PAGE_START);
 
+        centerDownPanel.setBackground(new java.awt.Color(28, 34, 59));
         centerDownPanel.setPreferredSize(new java.awt.Dimension(300, 300));
         centerDownPanel.setLayout(new java.awt.BorderLayout());
 
-        jScrollPane1.setBackground(new java.awt.Color(48, 61, 151));
-        jScrollPane1.setPreferredSize(new java.awt.Dimension(453, 150));
-        jScrollPane1.setRequestFocusEnabled(false);
+        jScrollPane2.setBackground(new java.awt.Color(102, 102, 255));
 
-        jTable1.setAutoCreateRowSorter(true);
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        jTable2.setBackground(new java.awt.Color(204, 204, 255));
+        jTable2.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
                 {null, null, null, null},
                 {null, null, null, null},
                 {null, null, null, null},
@@ -793,11 +1001,12 @@ public class View extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        jTable1.setPreferredSize(new java.awt.Dimension(300, 200));
-        jTable1.setRowHeight(20);
-        jScrollPane1.setViewportView(jTable1);
+        jTable2.setFocusable(false);
+        jTable2.setRowHeight(25);
+        jTable2.setRowMargin(1);
+        jScrollPane2.setViewportView(jTable2);
 
-        centerDownPanel.add(jScrollPane1, java.awt.BorderLayout.CENTER);
+        centerDownPanel.add(jScrollPane2, java.awt.BorderLayout.CENTER);
 
         centerPanel.add(centerDownPanel, java.awt.BorderLayout.CENTER);
 
@@ -819,7 +1028,7 @@ public class View extends javax.swing.JFrame {
          */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
+                if ("Windows".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
                 }
@@ -855,54 +1064,36 @@ public class View extends javax.swing.JFrame {
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton7;
+    private javax.swing.JButton jButton8;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel21;
+    private javax.swing.JLabel jLabel22;
+    private javax.swing.JLabel jLabel23;
+    private javax.swing.JLabel jLabel24;
+    private javax.swing.JLabel jLabel25;
+    private javax.swing.JLabel jLabel26;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel10;
-    private javax.swing.JPanel jPanel11;
-    private javax.swing.JPanel jPanel12;
-    private javax.swing.JPanel jPanel13;
-    private javax.swing.JPanel jPanel14;
-    private javax.swing.JPanel jPanel15;
-    private javax.swing.JPanel jPanel16;
-    private javax.swing.JPanel jPanel17;
-    private javax.swing.JPanel jPanel18;
-    private javax.swing.JPanel jPanel19;
+    private javax.swing.JPanel jPanel100;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel20;
-    private javax.swing.JPanel jPanel21;
-    private javax.swing.JPanel jPanel22;
-    private javax.swing.JPanel jPanel23;
     private javax.swing.JPanel jPanel24;
     private javax.swing.JPanel jPanel25;
     private javax.swing.JPanel jPanel26;
     private javax.swing.JPanel jPanel27;
     private javax.swing.JPanel jPanel28;
-    private javax.swing.JPanel jPanel29;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel30;
-    private javax.swing.JPanel jPanel31;
-    private javax.swing.JPanel jPanel32;
-    private javax.swing.JPanel jPanel33;
-    private javax.swing.JPanel jPanel34;
-    private javax.swing.JPanel jPanel35;
-    private javax.swing.JPanel jPanel36;
     private javax.swing.JPanel jPanel37;
     private javax.swing.JPanel jPanel38;
     private javax.swing.JPanel jPanel39;
@@ -920,22 +1111,68 @@ public class View extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel50;
     private javax.swing.JPanel jPanel51;
+    private javax.swing.JPanel jPanel52;
+    private javax.swing.JPanel jPanel53;
+    private javax.swing.JPanel jPanel54;
+    private javax.swing.JPanel jPanel55;
+    private javax.swing.JPanel jPanel56;
+    private javax.swing.JPanel jPanel57;
+    private javax.swing.JPanel jPanel58;
+    private javax.swing.JPanel jPanel59;
     private javax.swing.JPanel jPanel6;
-    private javax.swing.JPanel jPanel7;
-    private javax.swing.JPanel jPanel8;
-    private javax.swing.JPanel jPanel9;
+    private javax.swing.JPanel jPanel60;
+    private javax.swing.JPanel jPanel61;
+    private javax.swing.JPanel jPanel62;
+    private javax.swing.JPanel jPanel63;
+    private javax.swing.JPanel jPanel64;
+    private javax.swing.JPanel jPanel65;
+    private javax.swing.JPanel jPanel66;
+    private javax.swing.JPanel jPanel67;
+    private javax.swing.JPanel jPanel68;
+    private javax.swing.JPanel jPanel69;
+    private javax.swing.JPanel jPanel70;
+    private javax.swing.JPanel jPanel71;
+    private javax.swing.JPanel jPanel72;
+    private javax.swing.JPanel jPanel73;
+    private javax.swing.JPanel jPanel74;
+    private javax.swing.JPanel jPanel75;
+    private javax.swing.JPanel jPanel76;
+    private javax.swing.JPanel jPanel77;
+    private javax.swing.JPanel jPanel78;
+    private javax.swing.JPanel jPanel79;
+    private javax.swing.JPanel jPanel80;
+    private javax.swing.JPanel jPanel81;
+    private javax.swing.JPanel jPanel82;
+    private javax.swing.JPanel jPanel83;
+    private javax.swing.JPanel jPanel84;
+    private javax.swing.JPanel jPanel85;
+    private javax.swing.JPanel jPanel86;
+    private javax.swing.JPanel jPanel87;
+    private javax.swing.JPanel jPanel88;
+    private javax.swing.JPanel jPanel89;
+    private javax.swing.JPanel jPanel90;
+    private javax.swing.JPanel jPanel91;
+    private javax.swing.JPanel jPanel92;
+    private javax.swing.JPanel jPanel93;
+    private javax.swing.JPanel jPanel94;
+    private javax.swing.JPanel jPanel95;
+    private javax.swing.JPanel jPanel96;
+    private javax.swing.JPanel jPanel97;
+    private javax.swing.JPanel jPanel98;
+    private javax.swing.JPanel jPanel99;
     private javax.swing.JRadioButton jRadioButton2;
     private javax.swing.JRadioButton jRadioButton3;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JTable jTable2;
     private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
-    private javax.swing.JTextField jTextField6;
-    private javax.swing.JTextField jTextField7;
-    private javax.swing.JToggleButton jToggleButton1;
+    private javax.swing.JTextField jTextField10;
+    private javax.swing.JTextField jTextField11;
+    private javax.swing.JTextField jTextField12;
+    private javax.swing.JTextField jTextField13;
+    private javax.swing.JTextField jTextField14;
+    private javax.swing.JTextField jTextField15;
+    private javax.swing.JTextField jTextField8;
+    private javax.swing.JTextField jTextField9;
     private javax.swing.JPanel rooPanel;
     private javax.swing.JPanel sidePanel;
     // End of variables declaration//GEN-END:variables
