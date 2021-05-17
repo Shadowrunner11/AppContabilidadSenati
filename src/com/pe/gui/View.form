@@ -128,7 +128,7 @@
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                  <AbsoluteConstraints x="30" y="730" width="90" height="100"/>
+                  <AbsoluteConstraints x="0" y="730" width="170" height="100"/>
                 </Constraint>
               </Constraints>
             </Component>
@@ -140,7 +140,7 @@
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                  <AbsoluteConstraints x="30" y="280" width="90" height="100"/>
+                  <AbsoluteConstraints x="0" y="280" width="170" height="100"/>
                 </Constraint>
               </Constraints>
             </Component>
@@ -152,7 +152,7 @@
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                  <AbsoluteConstraints x="30" y="430" width="90" height="100"/>
+                  <AbsoluteConstraints x="0" y="430" width="170" height="100"/>
                 </Constraint>
               </Constraints>
             </Component>
@@ -164,7 +164,7 @@
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                  <AbsoluteConstraints x="30" y="580" width="90" height="100"/>
+                  <AbsoluteConstraints x="0" y="580" width="170" height="100"/>
                 </Constraint>
               </Constraints>
             </Component>

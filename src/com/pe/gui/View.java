@@ -5,11 +5,14 @@
  */
 package com.pe.gui;
 
+import com.pe.logica.Correo;
+import com.pe.logica.Nombre;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import javax.swing.JButton;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.event.MouseInputListener;
 import javax.swing.plaf.basic.BasicButtonUI;
@@ -161,7 +164,41 @@ public class View extends javax.swing.JFrame {
 
             
         });
-        
+        jButton4.addMouseListener(new MouseListener() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                String errorM="";
+                Nombre nombre = new Nombre(jTextField8.getText());
+                Correo correo = new Correo(jTextField11.getText());
+                if (nombre.Validar()){
+                   
+                }else{
+                    errorM=errorM+"\nNombre no válido";
+                }if (correo.Validar()){
+                    
+                }else{
+                    errorM=errorM+"\nCorreo no válido";
+                }if (errorM.isEmpty()==false){
+                    JOptionPane.showMessageDialog(centerPanel, errorM);
+                }
+                
+            }
+
+            public void mousePressed(MouseEvent e) {
+            }
+
+            
+            public void mouseReleased(MouseEvent e) {
+            }
+
+            
+            public void mouseEntered(MouseEvent e) {
+            }
+
+            
+            public void mouseExited(MouseEvent e) {
+            }
+        });
     }
 
     /**
@@ -324,16 +361,16 @@ public class View extends javax.swing.JFrame {
         sidePanel.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 30, 90, 100));
 
         jButton6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/pe/icons/black-lightbulb1.png"))); // NOI18N
-        sidePanel.add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 730, 90, 100));
+        sidePanel.add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 730, 170, 100));
 
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/pe/icons/llaves1.png"))); // NOI18N
-        sidePanel.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 280, 90, 100));
+        sidePanel.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 280, 170, 100));
 
         jButton10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/pe/icons/calendar21.png"))); // NOI18N
-        sidePanel.add(jButton10, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 430, 90, 100));
+        sidePanel.add(jButton10, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 430, 170, 100));
 
         jButton11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/pe/icons/impresora1.png"))); // NOI18N
-        sidePanel.add(jButton11, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 580, 90, 100));
+        sidePanel.add(jButton11, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 580, 170, 100));
 
         rooPanel.add(sidePanel, java.awt.BorderLayout.WEST);
 

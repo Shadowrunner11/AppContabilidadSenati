@@ -18,12 +18,13 @@ public class PruebasLogica {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        DecimalFormat df =new DecimalFormat("###.##");
-        Sueldo sueldo=new Sueldo(11,23.5, true);
-        System.out.println(df.format(sueldo.getSueldoBruto()));
-        System.out.println(df.format(sueldo.getDescuento(0.13)));
-        System.out.println(df.format(sueldo.getBonificacion()));
-        System.out.println(df.format(sueldo.getSueldoNeto()));
+        System.out.println((new Nombre("Juan Perez")).Validar());
+        //DecimalFormat df =new DecimalFormat("###.##");
+        //Sueldo sueldo=new Sueldo(11,23.5, true);
+        //System.out.println(df.format(sueldo.getSueldoBruto()));
+        //System.out.println(df.format(sueldo.getDescuento(0.13)));
+        //System.out.println(df.format(sueldo.getBonificacion()));
+        //System.out.println(df.format(sueldo.getSueldoNeto()));
     }
     
 }

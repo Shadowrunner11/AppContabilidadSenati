@@ -19,7 +19,7 @@ public class Nombre {
         this.nombre = nombre;
     }
     public boolean Validar(){
-        Pattern pat= Pattern.compile("([a-zA-Z]{3,}[\\s]*)+");
+        Pattern pat= Pattern.compile("([a-zA-Z]{3,}[\\s])([a-zA-Z]{3,}[\\s]{0,1})+");
         Matcher mat= pat.matcher(nombre);
         return (mat.matches());
     }
