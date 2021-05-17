@@ -36,6 +36,7 @@ public class View extends javax.swing.JFrame {
     /**
      * Creates new form View
      */
+    Conexion con =new Conexion ();
     private void darkMode(){
         sidePanel.setBackground(new Color(18,18,18));
         jRadioButton2.setBackground(new Color(31, 27, 36));
@@ -61,6 +62,8 @@ public class View extends javax.swing.JFrame {
     }
     public View() {
         initComponents();
+        
+        
         jTable2.getTableHeader().setBackground(new Color (0,153,204));
         jTable2.getTableHeader().setForeground(new Color (255,255,254));
         jTable2.getTableHeader().setOpaque(false);
@@ -179,6 +182,8 @@ public class View extends javax.swing.JFrame {
                 Celular celular = new Celular(jTextField12.getText());
                 Ruc ruc= new Ruc(jTextField13.getText());
                 
+                
+                        
                 if (nombre.Validar()){
                    
                 }else{
@@ -201,8 +206,15 @@ public class View extends javax.swing.JFrame {
                     errorM=errorM+"\nRuc no válido";
                 }if (errorM.isEmpty()==false){
                     JOptionPane.showMessageDialog(centerPanel, errorM);
+                }else{
+                    String[] de={nombre.getNombre(),celular.getCelular(),correo.getCorreo(),
+                        
+                    direccion.getDireccion(),ruc.getRuc()};
+                    con.conexion();
+                    con.crearEmpleado(Integer.parseInt(de[4]),de[0] ,de[1], de[2], de[3], de[4],jRadioButton3.isSelected());
+                    
                 }
-                
+                                
             }
 
             public void mousePressed(MouseEvent e) {
@@ -1253,7 +1265,7 @@ public class View extends javax.swing.JFrame {
 
         jScrollPane2.setBackground(new java.awt.Color(102, 102, 255));
 
-        jTable2.setBackground(new java.awt.Color(204, 204, 204));
+        jTable2.setBackground(new java.awt.Color(250, 250, 250));
         jTable2.setFont(new java.awt.Font("Orbitron", 0, 10)); // NOI18N
         jTable2.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -1307,10 +1319,10 @@ public class View extends javax.swing.JFrame {
         // TODO add your handling code here:
         String ruc = jTextField13.getText();
         if ((new Ruc(ruc)).Validar()){
-            Conexion con =new Conexion ();
             con.conexion();
             con.filtrarDatosEmpleado(ruc, jTextField8, jTextField10, jTextField11, jTextField12,
                     jRadioButton2,jRadioButton3);   
+            con.mostrarDatosBoleta(ruc, jTable2);
             con.cerrarConexion();
             
         }else{

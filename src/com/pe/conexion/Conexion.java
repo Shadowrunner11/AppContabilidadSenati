@@ -15,6 +15,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import javax.swing.JRadioButton;
+import javax.swing.JTable;
 import javax.swing.JTextField;
 import javax.swing.table.DefaultTableModel;
 
@@ -143,7 +144,7 @@ public class Conexion {
             
             pst.execute();
                 
-            System.out.println("Exito");
+            System.out.println("Insercion Exitosa");
             
         }catch(SQLException e){
             System.out.println("Error"+e.getMessage());
@@ -171,6 +172,39 @@ public class Conexion {
         } catch (Exception e) {
             System.out.println("Error"+e.getMessage());
         }
+    }
+    public void mostrarDatosBoleta(String valor, JTable tabla){   
+        String[] encabezados = {"Fecha","Sueldo Bruto","Descuento","Bonificacion","Sueldo Neto"};
+        String[] registros = new String[5];
+        String[] columnas={"Fecha","SueldoB","Descuento","Bonificacion","SueldoN"};
+        DefaultTableModel modelo = new DefaultTableModel(null,encabezados);
+        
+        String SQL = "Select * from Boleta where Empleado="+valor;
+        
+        try {
+            Statement st = con.createStatement();
+            ResultSet rs = st.executeQuery(SQL);
+            
+            while (rs.next()){
+                for(int i=0;i<=4;i++){
+                    registros[i]=rs.getString(columnas[i]);
+                }
+
+                /*registros[2]=rs.getString("Fecha");
+                registros[3]=rs.getString("SueldoB");
+                registros[4]=rs.getString("Descuento");
+                registros[5]=rs.getString("Bonificacion");
+                registros[5]=rs.getString("SueldoN");
+                */
+                modelo.addRow(registros);
+            }
+            
+            tabla.setModel(modelo);
+            
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e.getMessage());
+        }
+        
     }
     
 }
