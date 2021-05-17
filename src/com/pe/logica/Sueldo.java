@@ -5,6 +5,8 @@
  */
 package com.pe.logica;
 
+import java.text.DecimalFormat;
+
 /**
  *
  * @author User
@@ -16,7 +18,7 @@ public class Sueldo {
     private double descuento;
     private boolean estado;
     private double bonificacion;
-    
+    DecimalFormat df =new DecimalFormat("###.##");
 
     public Sueldo(int horas, double precio, boolean estado) {
         this.horas = horas;
@@ -24,24 +26,27 @@ public class Sueldo {
         this.estado = estado;
         
     }
-    public double getSueldoBruto(){
+    public String getSueldoBruto(){
        sueldoBruto=horas*precio;
-        return sueldoBruto;
+        return df.format(sueldoBruto);
     }
-    public double getDescuento(double porcentaje){
+    public String getDescuento(double porcentaje){
         descuento=porcentaje*sueldoBruto;
-        return descuento;
+        return df.format(descuento);
     }
-    public double getBonificacion(){
+    public String getBonificacion(){
         if (estado){
+            
             bonificacion=sueldoBruto*0.07;
-            return bonificacion;
+            return df.format(bonificacion);
+            
         }else{
-            return 000.00;
+            return "000.00";
         }
     }
-    public double getSueldoNeto(){
-        return (sueldoBruto-descuento+bonificacion);
+    public String getSueldoNeto(){
+        double sueldoNeto=sueldoBruto-descuento+bonificacion;
+        return df.format(sueldoNeto);
         
         }
     }

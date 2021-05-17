@@ -19,7 +19,7 @@ public class Ruc {
         this.ruc = ruc;
     }
     public boolean Validar(){
-        Pattern pat= Pattern.compile("[\\d]{11}");
+        Pattern pat= Pattern.compile("[\\d]{10}");
         Matcher mat= pat.matcher(ruc);
         return (mat.matches());
     }

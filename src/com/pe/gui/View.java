@@ -6,8 +6,12 @@
 package com.pe.gui;
 
 import com.pe.conexion.Conexion;
+import com.pe.logica.Celular;
 import com.pe.logica.Correo;
+import com.pe.logica.Direccion;
 import com.pe.logica.Nombre;
+import com.pe.logica.Ruc;
+import com.pe.logica.Sueldo;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.event.MouseEvent;
@@ -49,7 +53,7 @@ public class View extends javax.swing.JFrame {
         for (JPanel panel: panels){
             panel.setBackground(new Color (31,27,36));
         }
-        JButton botones [] = {jButton2, jButton3, jButton4, jButton5, jButton7,jButton8,jButton9,jButton1, 
+        JButton botones [] = {jButton2, jButton3, jButton4, jButton5,jButton8,jButton9,jButton1, 
             jButton6, jButton10, jButton11};
         for (JButton boton : botones){
             boton.setBackground(new Color (18,18,18));
@@ -75,7 +79,7 @@ public class View extends javax.swing.JFrame {
         
         
         
-        JButton [] btns = {jButton2, jButton3, jButton4, jButton5, jButton7,jButton8,jButton9};
+        JButton [] btns = {jButton2, jButton3, jButton4, jButton5, jButton8,jButton9};
         JButton [] btnsside= {jButton1, jButton6, jButton10, jButton11 };
         
         
@@ -171,6 +175,10 @@ public class View extends javax.swing.JFrame {
                 String errorM="";
                 Nombre nombre = new Nombre(jTextField8.getText());
                 Correo correo = new Correo(jTextField11.getText());
+                Direccion direccion = new Direccion(jTextField10.getText());
+                Celular celular = new Celular(jTextField12.getText());
+                Ruc ruc= new Ruc(jTextField13.getText());
+                
                 if (nombre.Validar()){
                    
                 }else{
@@ -179,6 +187,18 @@ public class View extends javax.swing.JFrame {
                     
                 }else{
                     errorM=errorM+"\nCorreo no válido";
+                }if (celular.Validar()){
+                    
+                }else{
+                    errorM=errorM+"\nCelular no válido";
+                }if (direccion.Validar()){
+                    
+                }else{
+                    errorM=errorM+"\nDireccion no válida";
+                }if (ruc.Validar()){
+                    
+                }else{
+                    errorM=errorM+"\nRuc no válido";
                 }if (errorM.isEmpty()==false){
                     JOptionPane.showMessageDialog(centerPanel, errorM);
                 }
@@ -278,7 +298,6 @@ public class View extends javax.swing.JFrame {
         jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
         jButton5 = new javax.swing.JButton();
-        jButton7 = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         jLabel10 = new javax.swing.JLabel();
         jPanel89 = new javax.swing.JPanel();
@@ -367,7 +386,7 @@ public class View extends javax.swing.JFrame {
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/pe/icons/llaves1.png"))); // NOI18N
         sidePanel.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 290, 170, 100));
 
-        jButton10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/pe/icons/calendar21.png"))); // NOI18N
+        jButton10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/pe/icons/trashcan1.png"))); // NOI18N
         sidePanel.add(jButton10, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 400, 170, 100));
 
         jButton11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/pe/icons/impresora1.png"))); // NOI18N
@@ -784,6 +803,7 @@ public class View extends javax.swing.JFrame {
         buttonGroup1.add(jRadioButton2);
         jRadioButton2.setFont(new java.awt.Font("Orbitron", 0, 14)); // NOI18N
         jRadioButton2.setForeground(new java.awt.Color(255, 255, 255));
+        jRadioButton2.setSelected(true);
         jRadioButton2.setText("Soltero");
         jPanel28.add(jRadioButton2, java.awt.BorderLayout.LINE_START);
 
@@ -821,9 +841,6 @@ public class View extends javax.swing.JFrame {
 
         jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/pe/icons/actualizar2.png"))); // NOI18N
         jPanel4.add(jButton5);
-
-        jButton7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/pe/icons/trashcan2.png"))); // NOI18N
-        jPanel4.add(jButton7);
 
         jPanel2.add(jPanel4);
 
@@ -1211,6 +1228,11 @@ public class View extends javax.swing.JFrame {
         jButton8.setForeground(new java.awt.Color(255, 255, 255));
         jButton8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/pe/icons/accounting (2)1.png"))); // NOI18N
         jButton8.setText("Calcular");
+        jButton8.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton8MouseClicked(evt);
+            }
+        });
         jPanel49.add(jButton8);
 
         jButton9.setFont(new java.awt.Font("Square721 BT", 1, 18)); // NOI18N
@@ -1283,8 +1305,29 @@ public class View extends javax.swing.JFrame {
 
     private void jButton3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton3MouseClicked
         // TODO add your handling code here:
+        String ruc = jTextField13.getText();
+        if ((new Ruc(ruc)).Validar()){
+            Conexion con =new Conexion ();
+            con.conexion();
+            con.filtrarDatosEmpleado(ruc, jTextField8, jTextField10, jTextField11, jTextField12,
+                    jRadioButton2,jRadioButton3);   
+            con.cerrarConexion();
+            
+        }else{
+            JOptionPane.showMessageDialog(centerPanel, "Ingrese un número de RUC válido");
+        }
+        
               
     }//GEN-LAST:event_jButton3MouseClicked
+
+    private void jButton8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton8MouseClicked
+        // TODO add your handling code here:
+        Sueldo sueldo1 =new Sueldo (Integer.parseInt(jTextField16.getText()),Double.parseDouble(jTextField17.getText()),true);
+        jLabel14.setText(sueldo1.getSueldoBruto());
+        jLabel16.setText(sueldo1.getDescuento(0.13));
+        jLabel18.setText(sueldo1.getBonificacion());
+        jLabel30.setText(sueldo1.getSueldoNeto());
+    }//GEN-LAST:event_jButton8MouseClicked
 
     /**
      * @param args the command line arguments
@@ -1334,7 +1377,6 @@ public class View extends javax.swing.JFrame {
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
-    private javax.swing.JButton jButton7;
     private javax.swing.JButton jButton8;
     private javax.swing.JButton jButton9;
     private javax.swing.JLabel jLabel1;

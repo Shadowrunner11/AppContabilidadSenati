@@ -14,6 +14,8 @@ import java.sql.Statement;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
+import javax.swing.JRadioButton;
+import javax.swing.JTextField;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -31,9 +33,9 @@ public class Conexion {
             con=DriverManager.getConnection(uri, "uabcjiqlpfjs9rvp", "CHY8pqAkHULx5LSDV4jh");
             con.setAutoCommit(true);
             if(con != null){
-                JOptionPane.showMessageDialog(null, "Conexion exitosa");           
+                System.out.println("Conexion exitosa");           
             }else{
-                JOptionPane.showMessageDialog(null, "Esta apagado");
+                JOptionPane.showMessageDialog(null, "Está apagado");
             }
         }catch(Exception e){
             JOptionPane.showMessageDialog(null, e);
@@ -51,6 +53,47 @@ public class Conexion {
         String SQL = "Select * empleados"
     }
 */
+    public void filtrarDatosEmpleado(String valor, JTextField caja1, JTextField caja2, 
+            JTextField caja3, JTextField caja4,JRadioButton soltero, JRadioButton casado ){
+        
+        String SQL = "Select * from Empleado where Ruc="+valor;
+        
+        try {
+            Statement st = con.createStatement();
+            ResultSet rs = st.executeQuery(SQL);
+            
+            
+            String[] datos = {"Nombres","Correo","Celular","Direccion", "Estado"};
+            JTextField[] cajas={caja1, caja2, caja3, caja4};
+            
+            //if(rs.next()==false){
+            //    System.out.println("No hay datos");
+                
+            //}
+            if(rs.next()){
+                for(int i =0; i<4; i++){
+                    cajas[i].setText(rs.getString(datos[i]));
+                } 
+                if (rs.getBoolean(datos[4])){
+                    casado.setSelected(true);
+                    soltero.setSelected(false);
+                }else{
+                    casado.setSelected(false);
+                    soltero.setSelected(true);
+                }
+            }else{
+                System.out.println("No hay datos");
+                for (JTextField caja: cajas){
+                    caja.setText(null);
+                }
+            }
+  
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, e.getMessage());
+            
+        }
+        
+    }
     public void filtrarDatosEmpleado(int valor){
         
         String SQL = "Select * from Empleado where ID="+valor;
@@ -60,7 +103,7 @@ public class Conexion {
             ResultSet rs = st.executeQuery(SQL);
             
             
-            String[] datos = {"Nombres","Correo","Celular","Estado","Ruc"};
+            String[] datos = {"Nombres","Correo","Celular","Estado","Direccion"};
             
             
             //if(rs.next()==false){
@@ -68,8 +111,8 @@ public class Conexion {
                 
             //}
             if(rs.next()){
-                for(String dato: datos){
-                    System.out.println(rs.getString(dato));
+                for(int i =0; i<5; i++){
+                    System.out.println(rs.getString(datos[i]));
                 }            
             }else{
                 System.out.println("No hay datos");
@@ -79,8 +122,9 @@ public class Conexion {
             JOptionPane.showMessageDialog(null, e.getMessage());
             
         }
-        
     }
+    
+    
     public void crearEmpleado(int ID,String Nombres,String Celular,String Direccion,String Correo,String Ruc,boolean Estado){
         try{
             String SQL = "insert into Empleado(ID,Nombres,Celular,Direccion,Correo,Ruc,Estado) values(?,?,?,?,?,?,?)";
