@@ -5,6 +5,7 @@
  */
 package com.pe.gui;
 
+import com.pe.conexion.Conexion;
 import com.pe.logica.Correo;
 import com.pe.logica.Nombre;
 import java.awt.Color;
@@ -422,7 +423,6 @@ public class View extends javax.swing.JFrame {
         jPanel57.setPreferredSize(new java.awt.Dimension(20, 58));
         jPanel57.setLayout(new java.awt.BorderLayout());
 
-        jTextField8.setBackground(new java.awt.Color(255, 255, 255));
         jTextField8.setFont(new java.awt.Font("Orbitron", 1, 24)); // NOI18N
         jTextField8.setForeground(new java.awt.Color(51, 51, 51));
         jTextField8.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 255, 255)));
@@ -490,7 +490,6 @@ public class View extends javax.swing.JFrame {
         jPanel68.setPreferredSize(new java.awt.Dimension(20, 58));
         jPanel68.setLayout(new java.awt.BorderLayout());
 
-        jTextField10.setBackground(new java.awt.Color(255, 255, 255));
         jTextField10.setFont(new java.awt.Font("Orbitron", 1, 24)); // NOI18N
         jTextField10.setForeground(new java.awt.Color(51, 51, 51));
         jTextField10.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 255, 255)));
@@ -563,7 +562,6 @@ public class View extends javax.swing.JFrame {
         jPanel74.setPreferredSize(new java.awt.Dimension(20, 58));
         jPanel74.setLayout(new java.awt.BorderLayout());
 
-        jTextField11.setBackground(new java.awt.Color(255, 255, 255));
         jTextField11.setFont(new java.awt.Font("Orbitron", 1, 24)); // NOI18N
         jTextField11.setForeground(new java.awt.Color(51, 51, 51));
         jTextField11.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 255, 255)));
@@ -631,7 +629,6 @@ public class View extends javax.swing.JFrame {
         jPanel80.setPreferredSize(new java.awt.Dimension(20, 58));
         jPanel80.setLayout(new java.awt.BorderLayout());
 
-        jTextField12.setBackground(new java.awt.Color(255, 255, 255));
         jTextField12.setFont(new java.awt.Font("Orbitron", 1, 24)); // NOI18N
         jTextField12.setForeground(new java.awt.Color(51, 51, 51));
         jTextField12.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 255, 255)));
@@ -699,7 +696,6 @@ public class View extends javax.swing.JFrame {
         jPanel86.setPreferredSize(new java.awt.Dimension(20, 58));
         jPanel86.setLayout(new java.awt.BorderLayout());
 
-        jTextField13.setBackground(new java.awt.Color(255, 255, 255));
         jTextField13.setFont(new java.awt.Font("Orbitron", 1, 24)); // NOI18N
         jTextField13.setForeground(new java.awt.Color(51, 51, 51));
         jTextField13.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 255, 255)));
@@ -808,6 +804,16 @@ public class View extends javax.swing.JFrame {
         jPanel4.setLayout(new java.awt.GridLayout(1, 4));
 
         jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/pe/icons/lupa2.png"))); // NOI18N
+        jButton3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton3MouseClicked(evt);
+            }
+        });
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
         jPanel4.add(jButton3);
 
         jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/pe/icons/add2.png"))); // NOI18N
@@ -859,7 +865,6 @@ public class View extends javax.swing.JFrame {
         jPanel102.setPreferredSize(new java.awt.Dimension(10, 58));
         jPanel102.setLayout(new java.awt.BorderLayout());
 
-        jTextField16.setBackground(new java.awt.Color(255, 255, 255));
         jTextField16.setFont(new java.awt.Font("Orbitron", 1, 24)); // NOI18N
         jTextField16.setForeground(new java.awt.Color(51, 51, 51));
         jTextField16.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 255, 255)));
@@ -923,7 +928,6 @@ public class View extends javax.swing.JFrame {
         jPanel107.setPreferredSize(new java.awt.Dimension(10, 58));
         jPanel107.setLayout(new java.awt.BorderLayout());
 
-        jTextField17.setBackground(new java.awt.Color(255, 255, 255));
         jTextField17.setFont(new java.awt.Font("Orbitron", 1, 24)); // NOI18N
         jTextField17.setForeground(new java.awt.Color(51, 51, 51));
         jTextField17.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 255, 255)));
@@ -1271,6 +1275,16 @@ public class View extends javax.swing.JFrame {
     private void jTextField10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField10ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField10ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton3MouseClicked
+        // TODO add your handling code here:
+              
+    }//GEN-LAST:event_jButton3MouseClicked
 
     /**
      * @param args the command line arguments
