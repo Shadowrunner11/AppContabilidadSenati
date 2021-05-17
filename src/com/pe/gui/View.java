@@ -361,16 +361,16 @@ public class View extends javax.swing.JFrame {
         sidePanel.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 30, 90, 100));
 
         jButton6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/pe/icons/black-lightbulb1.png"))); // NOI18N
-        sidePanel.add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 730, 170, 100));
+        sidePanel.add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 620, 170, 100));
 
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/pe/icons/llaves1.png"))); // NOI18N
-        sidePanel.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 280, 170, 100));
+        sidePanel.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 290, 170, 100));
 
         jButton10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/pe/icons/calendar21.png"))); // NOI18N
-        sidePanel.add(jButton10, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 430, 170, 100));
+        sidePanel.add(jButton10, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 400, 170, 100));
 
         jButton11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/pe/icons/impresora1.png"))); // NOI18N
-        sidePanel.add(jButton11, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 580, 170, 100));
+        sidePanel.add(jButton11, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 510, 170, 100));
 
         rooPanel.add(sidePanel, java.awt.BorderLayout.WEST);
 
