@@ -67,10 +67,12 @@ public class Conexion {
             //    System.out.println("No hay datos");
                 
             //}
-            while(rs.next()){
+            if(rs.next()){
                 for(String dato: datos){
                     System.out.println(rs.getString(dato));
                 }            
+            }else{
+                System.out.println("No hay datos");
             }
   
         } catch (SQLException e) {
