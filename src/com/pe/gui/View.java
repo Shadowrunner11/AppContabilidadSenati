@@ -16,6 +16,9 @@ import java.awt.Color;
 import java.awt.Font;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JButton;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
@@ -1375,8 +1378,13 @@ public class View extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton9MouseClicked
 
     private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
-        // TODO add your handling code here:
-        //Runtime.getRuntime().exec("Calc");
+        try {
+            // TODO add your handling code here:
+            //Runtime.getRuntime().exec("Calc");
+            Runtime.getRuntime().exec("calc");
+        } catch (IOException ex) {
+            Logger.getLogger(View.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_jButton1MouseClicked
 
     /**
