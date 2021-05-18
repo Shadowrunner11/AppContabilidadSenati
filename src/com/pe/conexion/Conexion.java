@@ -11,6 +11,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.sql.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
@@ -174,9 +175,9 @@ public class Conexion {
         }
     }
     public void mostrarDatosBoleta(String valor, JTable tabla){   
-        String[] encabezados = {"Fecha","Sueldo Bruto","Descuento","Bonificacion","Sueldo Neto"};
-        String[] registros = new String[5];
-        String[] columnas={"Fecha","SueldoB","Descuento","Bonificacion","SueldoN"};
+        String[] encabezados = {"Numero","Fecha","Sueldo Bruto","Descuento","Bonificacion","Sueldo Neto"};
+        String[] registros = new String[6];
+        String[] columnas={"ID","Fecha","SueldoB","Descuento","Bonificacion","SueldoN"};
         DefaultTableModel modelo = new DefaultTableModel(null,encabezados);
         
         String SQL = "Select * from Boleta where Empleado="+valor;
@@ -186,19 +187,11 @@ public class Conexion {
             ResultSet rs = st.executeQuery(SQL);
             
             while (rs.next()){
-                for(int i=0;i<=4;i++){
+                for(int i=0;i<=5;i++){
                     registros[i]=rs.getString(columnas[i]);
                 }
-
-                /*registros[2]=rs.getString("Fecha");
-                registros[3]=rs.getString("SueldoB");
-                registros[4]=rs.getString("Descuento");
-                registros[5]=rs.getString("Bonificacion");
-                registros[5]=rs.getString("SueldoN");
-                */
                 modelo.addRow(registros);
             }
-            
             tabla.setModel(modelo);
             
         } catch (Exception e) {
@@ -206,5 +199,50 @@ public class Conexion {
         }
         
     }
-    
+    public void eliminar(JTable tabla){
+        int fila = tabla.getSelectedRow();
+        
+        try {
+            String SQL = "Delete from Boleta where ID=" + tabla.getValueAt(fila, 0);
+            
+            Statement st = con.createStatement();
+            
+            int r = st.executeUpdate(SQL);
+            
+            if (r>=0){
+                JOptionPane.showMessageDialog(null, "Registro eliminado correctamente");
+            }
+            
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Error al eliminar el registro " + e.getMessage() );
+        }
+    }
+        public void crearBoleta(String Empleado,String SueldoB,String Descuento,String Bonificacion,String SueldoN){
+        try{
+            String SQL = "insert into Boleta(Empleado,SueldoN,Descuento,Bonificacion,SueldoB,Fecha) values(?,?,?,?,?,?)";
+
+            PreparedStatement pst = con.prepareStatement(SQL);
+            
+            String[] texto = {SueldoN,Descuento,Bonificacion,SueldoB};
+            
+            pst.setInt(1,Integer.parseInt(Empleado));
+                      
+            int contador = 2;    
+            for(String t:texto){
+                pst.setString(contador,t);
+                contador++;
+            }
+            //pst.setBoolean(7,Estado);
+            long fecha = System.currentTimeMillis();
+            Date hoy = new Date(fecha);
+            pst.setDate(6,hoy);
+            
+            pst.execute();
+                
+            System.out.println("Insercion Exitosa");
+            
+        }catch(SQLException e){
+            System.out.println("Error"+e.getMessage());
+        }
+    }
 }

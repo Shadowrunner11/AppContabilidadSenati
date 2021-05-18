@@ -24,6 +24,7 @@ import javax.swing.plaf.basic.BasicButtonUI;
 import javax.swing.plaf.basic.BasicScrollBarUI;
 import javax.swing.plaf.basic.BasicScrollPaneUI;
 import javax.swing.plaf.basic.BasicTableUI;
+import org.omg.SendingContext.RunTime;
 
 
 
@@ -396,9 +397,19 @@ public class View extends javax.swing.JFrame {
         sidePanel.add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 620, 170, 100));
 
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/pe/icons/llaves1.png"))); // NOI18N
+        jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton1MouseClicked(evt);
+            }
+        });
         sidePanel.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 290, 170, 100));
 
         jButton10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/pe/icons/trashcan1.png"))); // NOI18N
+        jButton10.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton10MouseClicked(evt);
+            }
+        });
         sidePanel.add(jButton10, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 400, 170, 100));
 
         jButton11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/pe/icons/impresora1.png"))); // NOI18N
@@ -1251,6 +1262,11 @@ public class View extends javax.swing.JFrame {
         jButton9.setForeground(new java.awt.Color(255, 255, 255));
         jButton9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/pe/icons/piggy-bank1.png"))); // NOI18N
         jButton9.setText("Pagar");
+        jButton9.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton9MouseClicked(evt);
+            }
+        });
         jPanel49.add(jButton9);
 
         jPanel1.add(jPanel49);
@@ -1334,12 +1350,34 @@ public class View extends javax.swing.JFrame {
 
     private void jButton8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton8MouseClicked
         // TODO add your handling code here:
-        Sueldo sueldo1 =new Sueldo (Integer.parseInt(jTextField16.getText()),Double.parseDouble(jTextField17.getText()),true);
+        Sueldo sueldo1 =new Sueldo (Integer.parseInt(jTextField16.getText()),
+                Double.parseDouble(jTextField17.getText()),jRadioButton3.isSelected());
         jLabel14.setText(sueldo1.getSueldoBruto());
         jLabel16.setText(sueldo1.getDescuento(0.13));
         jLabel18.setText(sueldo1.getBonificacion());
         jLabel30.setText(sueldo1.getSueldoNeto());
     }//GEN-LAST:event_jButton8MouseClicked
+
+    private void jButton10MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton10MouseClicked
+        // TODO add your handling code here:
+        con.conexion();
+        con.eliminar(jTable2);
+        con.mostrarDatosBoleta  (jTextField13.getText(), jTable2);
+        con.cerrarConexion();
+    }//GEN-LAST:event_jButton10MouseClicked
+
+    private void jButton9MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton9MouseClicked
+        // TODO add your handling code here:
+        con.conexion();
+        con.crearBoleta(jTextField13.getText(),jLabel14.getText(),jLabel16.getText(), jLabel18.getText(),jLabel30.getText());
+        con.mostrarDatosBoleta(jTextField13.getText(), jTable2);
+        con.cerrarConexion();        
+    }//GEN-LAST:event_jButton9MouseClicked
+
+    private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
+        // TODO add your handling code here:
+        //Runtime.getRuntime().exec("Calc");
+    }//GEN-LAST:event_jButton1MouseClicked
 
     /**
      * @param args the command line arguments
